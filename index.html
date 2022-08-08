@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/png" href="resources/logo-vero.png" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css"></link>
+    <title>Portfolio JS Masonry</title>
+</head>
+<body>
+    <div id="canvas">
+        <div id="mobileNav" class="wrapper"></div>
+            <nav class="main-nav mobile Nav"></nav>
+
+        <header id="header">
+            <div id="logo">
+                <h1 class="logo">
+                    <a href="">
+                        <img src="" alt="Veronica Art">
+                    </a>
+                </h1>
+            </div>    
+            
+            <div id="topNav">
+                <nav class="main-nav">
+                    <ul class="main-nav--pages">
+                        <li class="page-collection active-link">
+                            <a href="/">Projects</a>
+                        </li>
+                        <li class="page-collection">
+                            <a href="/">Personal Work</a>
+                        </li>
+                        <li class="page-collection">
+                            <a href="/">About</a>
+                        </li>
+                        <li class="page-collection">
+                            <a href="/">Contact</a>
+                        </li>
+                    <!-- </ul> -->
+                    <!-- <ul class="social-icons"> -->
+                        <li class="icon-collection">
+                            <a href="/"><i class="fa-solid fa-envelope"></i></a>
+                        </li>
+                        <li class="icon-collection">
+                            <a href="/"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li class="icon-collection">
+                            <a href="/"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </li>
+                        <li class="icon-collection">
+                            <a href="/"><i class="fa-brands fa-facebook-f"></i></a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+    
+    <div class="grid">
+
+        <!-- test image -->
+        <div class="grid-item">
+            <img class="grid-image" src="images\8.jpg" alt="">
+            <div class="grid-image-overlay">
+                  <span class="grid-image-text">Test Image</span>
+            </div>
+          </div>
+
+    </div>
+
+    <div class="gallery-overlay" onclick="this.style.display='none';">
+        <a href="" class="item-close"><button class="close-button">
+            <i class="fa-solid fa-x"></i>
+        </button>
+        </a>
+    </div>
+
+
+    
+    <script src="libraries/jquery v3.6.0.pkgd.min.js"></script>
+    <script src="libraries/imagesloaded.pkgd.min.js"></script>
+    <script src="libraries/masonry.pkgd.min.js"></script>
+    <script src="script.js" defer></script>
+    
+
+    <!-- <script src="libraries\imagesloaded.js"></script> -->
+    <!-- <script src="libraries\AnimOnScroll.js"></script> -->
+</body>
+</html>
+

@@ -14,6 +14,7 @@ $(window).on("load", function () {
 
   const folder = "/other_images_temp/"
 
+  // todo make async
   function processImages() {
     $.ajax({
       // type: "method",

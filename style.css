@@ -129,7 +129,7 @@ button {
   height: 2px;
   bottom:10px;
   left:0;
-  background-color: #333333;
+  background-color: #58554f;
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out;
@@ -149,7 +149,7 @@ button {
   height: 2px;
   bottom:10px;
   left:0;
-  background-color: #333;
+  background-color: #58554f;
   visibility: hidden;
   transition: all 0.3s ease-in-out;
 }
@@ -177,14 +177,15 @@ header h1 {
   font-weight: 300;
   text-align: center;
 }
+
 a {
-	color: #333333;
+	color: #58554f;
 	text-decoration: none;
 }
 
 
 /* a:hover, a:active { */
-  /* color: #333; */
+  /* color: #58554f; */
   /* background-color: transparent; */
   /* font-weight: 400; */
 /* } */
@@ -231,7 +232,7 @@ a {
   margin: 7px;
   /* box-shadow: 0 0 10px 4px rgba(0,0,0,0.1); */
   /* background: #D26; */
-  /* border: 2px solid #333; */
+  /* border: 2px solid #58554f; */
   /* border-color: hsla(0, 0%, 0%, 0.5); */
   /* border-radius: 5px; */
 }
@@ -280,9 +281,7 @@ li.animate {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
-  /* todo dev re-enable */
-  /* display: none;   */
+  visibility: hidden;
   background-color: hsla(0, 0%, 0%, 0.40);
   /* background-size: 500px; */
   position:fixed;
@@ -315,7 +314,7 @@ li.animate {
 
 .gallery-overlay-image {
   max-width: 85vw;
-  max-height: 100%;
+  max-height: 85vh;
   display: block;
 }
 
@@ -363,7 +362,7 @@ li.animate {
 }
 
 .close-button:hover {
-  color: #333333;
+  color: #58554f;
 }
 
 .gallery-overlay-nav {
@@ -506,7 +505,7 @@ body#contact-page, .bg-contact {
   display: block;
   font-style: bold;
   font-size: 39px;
-  color: #333333;
+  color: #58554f;
   line-height: 1.2;
   text-align: center;
   padding-bottom: 90px;

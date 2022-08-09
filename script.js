@@ -88,31 +88,38 @@ $(window).on("load", function () {
   // gallery overlay logic
   $.when(processImages()).done(() => {
     let gridItems = document.querySelectorAll(".grid-item")
-    let overlayImage = document.querySelector(".gallery-overlay-image")
-    let overlayTitle = document.querySelector(".gallery-overlay-title")
+    // let overlayImage = document.querySelector(".gallery-overlay-image")
+    // let overlayTitle = document.querySelector(".gallery-overlay-title")
+
     // console.log(gridItems)
 
     // setup gallery overlay
-    // const galleryOverlay = document.querySelector(".gallery-overlay")
+    const galleryOverlay = document.querySelector(".gallery-overlay")
 
     gridItems.forEach((gridItem) => {
       gridItem.addEventListener("click", () => {
         let imgURL = gridItem.querySelector("img").src
+        let overlayImage = document.querySelector(".gallery-overlay-image")
+        let overlayTitle = document.querySelector(".gallery-overlay-title")
+        let newOverlayTitle = imgURL.substring(
+          imgURL.lastIndexOf("/") + 1,
+          imgURL.lastIndexOf(".")
+        )
 
         console.log(imgURL)
-
         overlayImage.src = imgURL
+        overlayTitle.innerHTML = `${newOverlayTitle}`
 
-        // galleryOverlay.style.backgroundImage = `url("${imgURL}")`
-        // galleryOverlay.style.display = "block"
+        galleryOverlay.style.visibility = "visible"
       })
     })
     // todo dev remove
-    overlayImage.src = "other_images_temp\\Black-And-Silver-Laptop.jpg"
-    ovTitle = overlayImage.src.substring(
-      overlayImage.src.lastIndexOf("/") + 1,
-      overlayImage.src.lastIndexOf(".")
-    )
-    overlayTitle.innerHTML = `${ovTitle}`
+    //   overlayImage.src = "other_images_temp\\Black-And-Silver-Laptop.jpg"
+    //   newOverlayTitle = overlayImage.src.substring(
+    //     overlayImage.src.lastIndexOf("/") + 1,
+    //     overlayImage.src.lastIndexOf(".")
+    //   )
+    //   overlayTitle.innerHTML = `${newOverlayTitle}`
+    // })
   })
 })

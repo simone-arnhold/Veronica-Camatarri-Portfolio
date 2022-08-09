@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
 @import url("http://fonts.googleapis.com/css?family=Lato:300,400,700");
-
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento&display=swap');
 
 @media only screen and (max-width: 750px) {
   body {
@@ -129,7 +129,7 @@ button {
   height: 2px;
   bottom:10px;
   left:0;
-  background-color: #333;
+  background-color: #333333;
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out;
@@ -178,16 +178,17 @@ header h1 {
   text-align: center;
 }
 a {
-	color: #aaa;
+	color: #333333;
 	text-decoration: none;
 }
 
 
-a:hover, a:active {
-  color: #333;
-  /* background-color: #e6e0e0; */
+/* a:hover, a:active { */
+  /* color: #333; */
+  /* background-color: transparent; */
   /* font-weight: 400; */
-}
+/* } */
+
 .icon-collection {
   /* display: flex; */
   align-items: center;
@@ -274,11 +275,18 @@ li.animate {
 
 .gallery-overlay {
   object-fit: cover;
-  display: none;
+  display: flex;
+  /* check */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  /* todo dev re-enable */
+  /* display: none;   */
   background-color: hsla(0, 0%, 0%, 0.40);
   /* background-size: 500px; */
   position:fixed;
-  z-index: 9999;
+  z-index: 1000;
   top: 0;
   left: 0;
   width: 100vw;
@@ -289,6 +297,26 @@ li.animate {
   background-repeat: no-repeat no-repeat;
   background-position: center center;
   /* opacity: 0.7; */
+}
+
+.gallery-overlay-outerbox {
+  position: relative;
+  /* width: auto;
+  height: auto; */
+}
+
+.gallery-overlay-innerbox {
+  position: relative;
+  overflow: visible;
+  /* width: 80vw; */
+  /* height: 300px; */
+
+}
+
+.gallery-overlay-image {
+  max-width: 85vw;
+  max-height: 100%;
+  display: block;
 }
 
 
@@ -325,11 +353,80 @@ li.animate {
   color: #fff;
 }
 
-.item-close {
+.close-button {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: -30px;
+  right: 10px;
+  transition: 200ms ease-out;
+  color: #fff;
+  cursor: pointer;
 }
+
+.close-button:hover {
+  color: #333333;
+}
+
+.gallery-overlay-nav {
+  position: absolute;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  background: transparent;
+  z-index: 2000;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+  font-size: 50px;
+  font-weight: normal;
+  line-height: 0.5em;
+  color: #fff;
+  background-color: transparent;
+  opacity: 0;
+  transition: 200ms ease-out;
+}
+
+.gallery-overlay-prev {
+  left: 0;
+}
+
+.gallery-overlay-next {
+  right: 0;
+}
+
+.gallery-overlay-nav:hover {
+  opacity: 1;
+}
+
+.gallery-overlay-prev::before {
+  position: absolute;
+  top: 50%;
+  margin-top: -18px;
+  content: "\3008";
+  z-index: 3000;
+}
+.gallery-overlay-next::before {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  /* necessary for font dimension */
+  margin-top: -18px;
+  content: "\3009";
+  z-index: 3000;
+}
+
+.gallery-overlay-title {
+  color: #ffffff;
+  font-family: "Quattrocento", serif;
+  /* font-family: "Roboto"; */
+  font-size: 16px;
+  font-weight: normal;
+  line-height: normal;
+  padding-top: 10px;
+}
+
 
 /* CONTACT PAGE */
 body#contact-page, .bg-contact {

@@ -1,17 +1,4 @@
 $(window).on("load", function () {
-  // var $grid = $(".grid").imagesLoaded(function () {
-  //   // init Masonry after all images have loaded
-  //   $grid.masonry({
-  //     // options...
-  //     columnWidth: 80,
-  //     itemSelector: ".grid-item",
-  //   })
-  // })
-
-  // $grid.imagesLoaded().progress(function () {
-  //   $grid.masonry("layout")
-  // })
-
   const folder = "/other_images_temp/"
 
   // todo make async
@@ -19,9 +6,7 @@ $(window).on("load", function () {
     $.ajax({
       // type: "method",
       url: folder,
-      async: false,
-      // data: "data",
-      // dataType: "dataType",
+      async: false, //todo
       success: function (data) {
         $(data)
           .find("a")
@@ -100,34 +85,34 @@ $(window).on("load", function () {
 
   // processImages().Wait()
 
-  $.when(processImages()).done(function () {
-    const gridItems = document.querySelectorAll(".grid-item")
-    console.log(gridItems)
+  // gallery overlay logic
+  $.when(processImages()).done(() => {
+    let gridItems = document.querySelectorAll(".grid-item")
+    let overlayImage = document.querySelector(".gallery-overlay-image")
+    let overlayTitle = document.querySelector(".gallery-overlay-title")
+    // console.log(gridItems)
 
-    const galleryOverlay = document.querySelector(".gallery-overlay")
+    // setup gallery overlay
+    // const galleryOverlay = document.querySelector(".gallery-overlay")
 
     gridItems.forEach((gridItem) => {
       gridItem.addEventListener("click", () => {
         let imgURL = gridItem.querySelector("img").src
+
         console.log(imgURL)
-        galleryOverlay.style.backgroundImage = `url("${imgURL}")`
-        galleryOverlay.style.display = "block"
+
+        overlayImage.src = imgURL
+
+        // galleryOverlay.style.backgroundImage = `url("${imgURL}")`
+        // galleryOverlay.style.display = "block"
       })
     })
+    // todo dev remove
+    overlayImage.src = "other_images_temp\\Black-And-Silver-Laptop.jpg"
+    ovTitle = overlayImage.src.substring(
+      overlayImage.src.lastIndexOf("/") + 1,
+      overlayImage.src.lastIndexOf(".")
+    )
+    overlayTitle.innerHTML = `${ovTitle}`
   })
-
-  // const testImg = document.querySelector(".grid-image")
-  // const testDiv = document.querySelector(".grid-item")
-
-  // testImg.addEventListener("click", () => {
-  //   console.log("clicked image")
-  // })
-
-  // testDiv.addEventListener("click", () => {
-  //   console.log("clicked div")
-  //   let varImgURL = testDiv.querySelector("img").src
-  //   galleryOverlay.style.backgroundImage = `url("${varImgURL}")`
-  //   galleryOverlay.style.display = "block"
-  //   console.log(varImgURL)
-  // })
 })

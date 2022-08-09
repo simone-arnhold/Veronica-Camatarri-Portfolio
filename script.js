@@ -146,6 +146,10 @@ $(window).on("load", function () {
       console.log(imgIndex)
 
       // put the previous image in the index as overlayImage
+      if (imgIndex < 1) {
+        // loop array
+        imgIndex = imagesArray.length
+      }
       overlayImage.src = imagesArray[imgIndex - 1]
       console.log(overlayImage.src)
       overlayTitle = CreateNewOverlayTitle()

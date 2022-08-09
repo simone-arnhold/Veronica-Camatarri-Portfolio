@@ -354,7 +354,7 @@ li.animate {
 
 .close-button {
   position: absolute;
-  top: -30px;
+  top: -25px;
   right: 10px;
   transition: 200ms ease-out;
   color: #fff;

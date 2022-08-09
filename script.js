@@ -1,5 +1,6 @@
 $(window).on("load", function () {
-  const folder = "/other_images_temp/"
+  const folder = "/other_images/"
+  let imagesArray = []
 
   // todo make async
   function processImages() {
@@ -12,6 +13,8 @@ $(window).on("load", function () {
           .find("a")
           .attr("href", function (i, val) {
             if (val.match(/\.(jpe?g|png|gif)$/)) {
+              imagesArray.push(val)
+
               title = val
                 .match(/\/.*\/(.*)\.(jpe?g|png|gif)/)[1]
                 .replaceAll("-", " ")
@@ -93,33 +96,59 @@ $(window).on("load", function () {
 
     // console.log(gridItems)
 
+    // close button logic
+    let closeBtn = document.querySelector(".close-button")
+    closeBtn.addEventListener("click", () => {
+      galleryOverlay.style.visibility = "hidden"
+    })
+
     // setup gallery overlay
     const galleryOverlay = document.querySelector(".gallery-overlay")
+    let overlayImage = document.querySelector(".gallery-overlay-image")
+    let overlayTitle = document.querySelector(".gallery-overlay-title")
 
     gridItems.forEach((gridItem) => {
       gridItem.addEventListener("click", () => {
         let imgURL = gridItem.querySelector("img").src
-        let overlayImage = document.querySelector(".gallery-overlay-image")
-        let overlayTitle = document.querySelector(".gallery-overlay-title")
+        overlayImage = document.querySelector(".gallery-overlay-image")
+        // console.log(overlayImage)
+        overlayTitle = document.querySelector(".gallery-overlay-title")
         let newOverlayTitle = imgURL.substring(
           imgURL.lastIndexOf("/") + 1,
           imgURL.lastIndexOf(".")
         )
-
-        console.log(imgURL)
         overlayImage.src = imgURL
         overlayTitle.innerHTML = `${newOverlayTitle}`
 
         galleryOverlay.style.visibility = "visible"
       })
     })
-    // todo dev remove
-    //   overlayImage.src = "other_images_temp\\Black-And-Silver-Laptop.jpg"
-    //   newOverlayTitle = overlayImage.src.substring(
-    //     overlayImage.src.lastIndexOf("/") + 1,
-    //     overlayImage.src.lastIndexOf(".")
-    //   )
-    //   overlayTitle.innerHTML = `${newOverlayTitle}`
-    // })
+
+    //TODO everything is broken past this
+
+    // prev next nav button logic
+    const direction = ["left", "right"]
+    const prevBtn = document.querySelector(".gallery-overlay-prev")
+    const nextBtn = document.querySelector(".gallery-overlay-next")
+
+    prevBtn.addEventListener("click", () => {
+      let overlayImageURL = document
+        .querySelector(".gallery-overlay-image")
+        .getAttribute("src")
+
+      overlayImageURL =
+        folder + overlayImageURL.substring(overlayImageURL.lastIndexOf("/") + 1)
+      console.log(overlayImageURL)
+      console.log(imagesArray)
+
+      // check index of current image
+      let imgIndex = imagesArray.indexOf(overlayImageURL)
+      console.log(imgIndex)
+
+      // put the previous image in the index as overlayImage
+      overlayImage.src = imagesArray[imgIndex - 1]
+      console.log(overlayImage.src)
+      overlayTitle = CreateNewOverlayTitle()
+    })
   })
 })

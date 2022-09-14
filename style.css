@@ -31,7 +31,7 @@
     top: 0;
     width: 100%;
     display: block !important;
-    background-color: #fff;
+    background-color: #333;
     height: 50px;
     padding: 10px;
     box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.6);
@@ -58,12 +58,20 @@
     font-weight: 700;
     font-size: 32px;
     white-space: nowrap !important;
-    color: #333;
-    transition: color 100ms ease;
+    color: #fff;
+    transition: color 300ms ease;
   }
 
   #mobile-logo:hover {
-    color: #000;
+    color: #00dbde;
+  }
+
+  i {
+    color: #fff;
+  }
+
+  .grid-container {
+    margin: 0px 10px;
   }
 
   .grid {
@@ -134,12 +142,16 @@ body {
   background-size: auto;
 
   /* display: flex; */
+  /* align-items: center;
+  justify-content: center; */
+  /* display: flex; */
   /* flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
   overflow: hidden;
   margin: 0; */
+
   text-rendering: optimizeLegibility;
   image-rendering: optimizeQuality;
   text-transform: none;
@@ -191,8 +203,16 @@ button {
   margin-right: 80px;
 }
 
-.logo {
+.logo a {
   font-family: "Kenia";
+  transition: color 500ms ease-in-out;
+  /* color: #551a8b; */
+}
+
+.logo a:hover {
+  /* color: #551a8b; */
+  color: #000;
+  color: -moz-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
 }
 
 #topNav {
@@ -322,6 +342,12 @@ a {
   transform: scale(1.8);
 }
 
+.grid-container {
+  /* width: 100%; */
+  /* height: 100%; */
+  margin: 0px 20px;
+}
+
 .grid {
   position: relative;
   display: flex;
@@ -330,12 +356,8 @@ a {
   justify-content: center;
   max-width: 85em;
   list-style: none;
-  /* margin: 30px auto;
-    margin-top: 30px;
-    margin-right: auto;
-    margin-bottom: 30px;
-    margin-left: auto; */
-  margin: 0 auto;
+  margin: 30px auto;
+  /* margin: 0 auto; */
   /* padding: 0; */
   /* background-color: #575757; */
 }
@@ -343,8 +365,6 @@ a {
 .grid-item {
   display: block;
   position: relative;
-  /* width: 100%;
-  height: 100%; */
   float: left;
   margin: 7px;
   /* box-shadow: 0 0 10px 4px rgba(0,0,0,0.1); */
@@ -388,11 +408,22 @@ li.animate {
     opacity: 1;
   }
 }
-
-.grid img {
+/* KEEP AS ORIGINAL */
+/* .grid img {
   float: left;
   width: 400px;
   height: 270px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+} */
+
+/* BANNER TEST */
+.grid img {
+  float: left;
+  width: 1080px;
+  /* height: 270px; */
   object-fit: cover;
   border-radius: 15px;
   box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);

@@ -15,7 +15,6 @@ $(window).on("load", function () {
   })
 
   const folder = "/images/Banners_Vero_jpg"
-  // const folder = "other_images/"
   let imagesArray = []
 
   // todo make async
@@ -31,10 +30,11 @@ $(window).on("load", function () {
             if (val.match(/\.(jpe?g|png|gif)$/)) {
               imagesArray.push(val.substring(val.lastIndexOf("/") + 1))
 
-              title = val.match(/\/.*\/(.*)\.(jpe?g|png|gif)/)[1]
-              // .replaceAll("-", " ")
-              // .replaceAll(/%20/g, " ")
-              // .replaceAll("_", " ")
+              title = val
+                .match(/\/.*\/(.*)\.(jpe?g|png|gif)/)[1]
+                .replaceAll("-", " ")
+                .replaceAll(/%20/g, " ")
+                .replaceAll("_", " ")
 
               $(".grid").append(
                 `
@@ -51,59 +51,6 @@ $(window).on("load", function () {
       },
     })
   }
-
-  //old grid-item with ahref
-  // `<div class="grid-item">
-  //   <a href="${val}"><img class="grid-image" src="${val}" alt=""></a>
-  // </div>`
-
-  // function applyNotHoveredToOthers() {
-  //   $(".grid-image").toggleClass("not-hovered");
-  // }
-
-  // $(".grid-image").hover(
-  //   applyNotHoveredToOthers
-  // )
-  // https://stackoverflow.com/questions/3572224/how-to-select-all-class-except-the-clicked-element-in-jquery
-
-  // function addHover() {
-  //   console.log("hovered on image")
-  //   $(this).addClass("not-hovered")
-  // }
-  // function removeHover() {
-  //   $(this).removeClass("not-hovered")
-  // }
-
-  // console.log("hovered on image")
-  // $(this).addClass("not-hovered")
-
-  // $(".grid-image")
-  //   .not(this)
-  //   .each(function () {
-  //     $(this).toggleClass("not-hovered")
-  //   })
-
-  //initializes masonry after loading all images
-
-  // var $grid = $(".grid").imagesLoaded(function () {
-  //   $(".grid").masonry({
-  //     // options...
-  //     itemSelector: ".grid-item",
-  //     // columnWidth: 360,
-  //     // columnWidth: ".grid-sizer",
-  //     // percentPosition: true,
-  //     isFitWidth: true,
-  //   })
-  // })
-
-  // $(".grid-item").hover(function () {
-  //   console.log("hovered on image")
-  //   $(this).toggleClass("not-hovered")
-  // })
-
-  // const imgs = document.querySelectorAll(".grid-image")
-
-  // processImages().Wait()
 
   // gallery overlay logic
   $.when(processImages()).done(() => {
@@ -124,74 +71,71 @@ $(window).on("load", function () {
     let overlayImage = document.querySelector(".gallery-overlay-image")
     let overlayTitle = document.querySelector(".gallery-overlay-title")
 
+    function makeOverlayTitle(_imgURL) {
+      let newOverlayTitle = _imgURL
+        .substring(_imgURL.lastIndexOf("/") + 1, _imgURL.lastIndexOf("."))
+        .replaceAll("-", " ")
+        .replaceAll(/%20/g, " ")
+        .replaceAll("_", " ")
+      overlayImage.src = _imgURL
+      overlayTitle.innerHTML = `${newOverlayTitle}`
+    }
+
     gridItems.forEach((gridItem) => {
       gridItem.addEventListener("click", () => {
         let imgURL = gridItem.querySelector("img").src
         overlayImage = document.querySelector(".gallery-overlay-image")
         // console.log(overlayImage)
         overlayTitle = document.querySelector(".gallery-overlay-title")
-        let newOverlayTitle = imgURL.substring(
-          imgURL.lastIndexOf("/") + 1,
-          imgURL.lastIndexOf(".")
-        )
-        overlayImage.src = imgURL
-        overlayTitle.innerHTML = `${newOverlayTitle}`
 
+        makeOverlayTitle(imgURL)
         galleryOverlay.style.visibility = "visible"
       })
     })
 
-    //TODO everything is broken past this
-
     // prev next nav button logic
-    const direction = ["left", "right"]
+
     const prevBtn = document.querySelector(".gallery-overlay-prev")
     const nextBtn = document.querySelector(".gallery-overlay-next")
 
-    prevBtn.addEventListener("click", () => {
-      // rewrite
+    const btnArray = [prevBtn, nextBtn]
 
-      // let overlayImageURL = document
-      //   .querySelector(".gallery-overlay-image")
-      //   .getAttribute("src")
-      // console.log(overlayImageURL)
+    btnArray.forEach((elem) => {
+      elem.addEventListener("click", (e) => {
+        let overlayImageURL = document
+          .querySelector(".gallery-overlay-image")
+          .getAttribute("src")
+        console.log(overlayImageURL)
 
-      // overlayImageURL =
-      //   folder + overlayImageURL.substring(overlayImageURL.lastIndexOf("/"))
-      // // folder + overlayImageURL.substring(overlayImageURL.lastIndexOf("/") + 1)
-      // console.log("overlayImageURL: " + overlayImageURL)
-      // console.log(imagesArray)
+        overlayImageURL = overlayImageURL.substring(
+          overlayImageURL.lastIndexOf("/") + 1
+        )
 
-      // // check index of current image
-      // let imgIndex = imagesArray.indexOf(overlayImageURL)
-      // console.log("imgIndex: " + imgIndex)
+        console.log("overlayImageURL: " + overlayImageURL)
+        console.log(imagesArray)
 
-      // // put the previous image in the index as overlayImage
-      // // if (imgIndex < 1) {
-      // //   // loop array
-      // //   imgIndex = imagesArray.length - 1
-      // //   console.log("reset imgIndex: " + imgIndex)
-      // // }
-      // overlayImage.src = imagesArray[imgIndex - 1]
-      // // add go-to-right option
+        // check index of current image
+        let imgIndex = imagesArray.indexOf(overlayImageURL)
+        console.log("imgIndex: " + imgIndex)
 
-      // console.log(overlayImage.src)
-      // // overlayTitle = CreateNewOverlayTitle()
+        // put the previous image in the index as overlayImage
+        if (imgIndex < 1) {
+          // loop array to the end
+          imgIndex = imagesArray.length
+          console.log("reset imgIndex: " + imgIndex)
+        }
+        //prevBtn
+        if (e.target == prevBtn) {
+          overlayImage.src = folder + "/" + imagesArray[imgIndex - 1]
+        }
+        //nextBtn
+        if (e.target == nextBtn) {
+          overlayImage.src = folder + "/" + imagesArray[imgIndex + 1]
+        }
 
-      //
-      //test
-      let overlayImageURL = document
-        .querySelector(".gallery-overlay-image")
-        .getAttribute("src")
-      console.log("overlayImageURL: " + overlayImageURL)
-      console.log(imagesArray)
-      console.log("lastindex: " + overlayImageURL.lastIndexOf(folder))
-
-      let imageName = overlayImageURL.substring(
-        overlayImageURL.lastIndexOf(folder + 1)
-      )
-      // console.log(folder)
-      console.log("imageName: " + imageName)
+        console.log(overlayImage.src)
+        makeOverlayTitle(overlayImage.src)
+      })
     })
   })
 })

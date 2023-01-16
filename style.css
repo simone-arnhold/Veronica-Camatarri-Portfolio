@@ -564,6 +564,9 @@ li.animate {
   margin-top: -18px;
   content: "\3008";
   z-index: 3;
+  font-size: 70px;
+  color: #00dbde;
+  text-shadow: 3px 3px #004d4e;
 }
 .gallery-overlay-next::before {
   position: absolute;
@@ -573,6 +576,9 @@ li.animate {
   margin-top: -18px;
   content: "\3009";
   z-index: 3;
+  font-size: 70px;
+  color: #00dbde;
+  text-shadow: 3px 3px #004d4e;
 }
 
 .gallery-overlay-title {

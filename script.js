@@ -116,22 +116,28 @@ $(window).on("load", function () {
 
         // check index of current image
         let imgIndex = imagesArray.indexOf(overlayImageURL)
-        console.log("imgIndex: " + imgIndex)
+        console.log("current imgIndex: " + imgIndex)
 
         // put the previous image in the index as overlayImage
-        if (imgIndex < 1) {
-          // loop array to the end
-          imgIndex = imagesArray.length
-          console.log("reset imgIndex: " + imgIndex)
-        }
+
         //prevBtn
         if (e.target == prevBtn) {
-          overlayImage.src = folder + "/" + imagesArray[imgIndex - 1]
+          imgIndex--
+          if (imgIndex < 0) {
+            // loop array to the end
+            imgIndex = imagesArray.length - 1
+            console.log("reset imgIndex: " + imgIndex)
+          }
         }
         //nextBtn
         if (e.target == nextBtn) {
-          overlayImage.src = folder + "/" + imagesArray[imgIndex + 1]
+          imgIndex++
+          if (imgIndex >= imagesArray.length) {
+            imgIndex = 0
+          }
         }
+        overlayImage.src = folder + "/" + imagesArray[imgIndex]
+        console.log("new imgIndex: " + imgIndex)
 
         console.log(overlayImage.src)
         makeOverlayTitle(overlayImage.src)

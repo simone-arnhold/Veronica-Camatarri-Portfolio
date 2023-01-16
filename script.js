@@ -3,7 +3,6 @@ $(window).on("load", function () {
   const mobileNav = document.querySelector(".hamburger")
   const navMenu = document.querySelector(".mobile-nav")
   const mobileNavBtn = mobileNav.children[0]
-  console.log(mobileNav.children[0])
   mobileNav.addEventListener("click", () => {
     navMenu.classList.toggle("open")
     if (mobileNavBtn.classList.contains("fa-bars")) {
@@ -15,7 +14,8 @@ $(window).on("load", function () {
     }
   })
 
-  const folder = "/other_images/"
+  const folder = "/images/Banners_Vero_jpg"
+  // const folder = "other_images/"
   let imagesArray = []
 
   // todo make async
@@ -29,11 +29,12 @@ $(window).on("load", function () {
           .find("a")
           .attr("href", function (i, val) {
             if (val.match(/\.(jpe?g|png|gif)$/)) {
-              imagesArray.push(val)
+              imagesArray.push(val.substring(val.lastIndexOf("/") + 1))
 
-              title = val
-                .match(/\/.*\/(.*)\.(jpe?g|png|gif)/)[1]
-                .replaceAll("-", " ")
+              title = val.match(/\/.*\/(.*)\.(jpe?g|png|gif)/)[1]
+              // .replaceAll("-", " ")
+              // .replaceAll(/%20/g, " ")
+              // .replaceAll("_", " ")
 
               $(".grid").append(
                 `
@@ -148,27 +149,49 @@ $(window).on("load", function () {
     const nextBtn = document.querySelector(".gallery-overlay-next")
 
     prevBtn.addEventListener("click", () => {
+      // rewrite
+
+      // let overlayImageURL = document
+      //   .querySelector(".gallery-overlay-image")
+      //   .getAttribute("src")
+      // console.log(overlayImageURL)
+
+      // overlayImageURL =
+      //   folder + overlayImageURL.substring(overlayImageURL.lastIndexOf("/"))
+      // // folder + overlayImageURL.substring(overlayImageURL.lastIndexOf("/") + 1)
+      // console.log("overlayImageURL: " + overlayImageURL)
+      // console.log(imagesArray)
+
+      // // check index of current image
+      // let imgIndex = imagesArray.indexOf(overlayImageURL)
+      // console.log("imgIndex: " + imgIndex)
+
+      // // put the previous image in the index as overlayImage
+      // // if (imgIndex < 1) {
+      // //   // loop array
+      // //   imgIndex = imagesArray.length - 1
+      // //   console.log("reset imgIndex: " + imgIndex)
+      // // }
+      // overlayImage.src = imagesArray[imgIndex - 1]
+      // // add go-to-right option
+
+      // console.log(overlayImage.src)
+      // // overlayTitle = CreateNewOverlayTitle()
+
+      //
+      //test
       let overlayImageURL = document
         .querySelector(".gallery-overlay-image")
         .getAttribute("src")
-
-      overlayImageURL =
-        folder + overlayImageURL.substring(overlayImageURL.lastIndexOf("/") + 1)
-      console.log(overlayImageURL)
+      console.log("overlayImageURL: " + overlayImageURL)
       console.log(imagesArray)
+      console.log("lastindex: " + overlayImageURL.lastIndexOf(folder))
 
-      // check index of current image
-      let imgIndex = imagesArray.indexOf(overlayImageURL)
-      console.log(imgIndex)
-
-      // put the previous image in the index as overlayImage
-      if (imgIndex < 1) {
-        // loop array
-        imgIndex = imagesArray.length
-      }
-      overlayImage.src = imagesArray[imgIndex - 1]
-      console.log(overlayImage.src)
-      overlayTitle = CreateNewOverlayTitle()
+      let imageName = overlayImageURL.substring(
+        overlayImageURL.lastIndexOf(folder + 1)
+      )
+      // console.log(folder)
+      console.log("imageName: " + imageName)
     })
   })
 })

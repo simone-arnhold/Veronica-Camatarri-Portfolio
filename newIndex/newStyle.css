@@ -504,6 +504,7 @@ li.animate {
   border-radius: 15px;
   cursor: pointer;
 }
+
 .grid-image-overlay:hover {
   opacity: 1;
   cursor: pointer;
@@ -924,4 +925,32 @@ textarea.input2 + .focus-input2::after {
     visibility: visible;
     opacity: 1;
   }
+}
+
+/* ------------- newMain */
+
+.item {
+  width: 200px;
+  /* max-width: calc(1500px + 3vw); */
+  height: 500px;
+  margin-left: 10px;
+  margin-right: 10px;
+  /* padding: 10px; */
+  background-color: green;
+  color: #fff;
+}
+
+.bottom-text {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.main-grid {
+  flex-wrap: nowrap;
+}
+
+.main-grid-item {
+  grid-row: 1;
 }

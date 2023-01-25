@@ -6,10 +6,10 @@
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="icon" type="image/png" href="../resources/logo-vero.png" />
+    <link rel="icon" type="image/png" href="./resources/logo-vero.png" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="newStyle.css"></link>
+    <link rel="stylesheet" href="style.css"></link>
     <title>Portfolio JS Masonry</title>
 </head>
 <body>
@@ -37,7 +37,7 @@
     <div id="canvas">
         <header class="main-header">
             <div class="logo-container">
-                    <a href="">
+                    <a href="/">
                         <h1 class="logo">Veronica Camatarri Illustration
                         <!-- <img src="" alt="Veronica Art"> -->
                     </a>
@@ -47,6 +47,9 @@
             <div id="topNav">
                 <nav class="main-nav">
                     <ul class="main-nav--pages">
+                        <li class="page-collection active-link">
+                            <a href="/">Home</a>
+                        </li>
                         <li class="page-collection active-link">
                             <a href="#">Projects</a>
                         </li>
@@ -80,31 +83,33 @@
         </header>
     </div>
     <div class="section-wrapper">
-    <div class="section" id="section1" style="background-color: darkred;">
+    <div class="section" id="section1" style="background-color: lightblue;">
     <div class="grid-container">
         <div class="grid">
 
             <div class="grid-item">
                 <img class="grid-image" src="../resources/main-images/Idea_VeronicaCamatarri.jpg" alt="">
-                <div class="grid-image-overlay" >
+                <!-- <div class="grid-image-overlay" >
                       <span class="grid-image-text">imageTitle</span>
-                </div>
+                </div> -->
             </div>
-            <div class="grid-item">
-                <img class="grid-image" src="../resources/main-images/Idea_VeronicaCamatarri.jpg" alt="">
-                <div class="grid-image-overlay" >
-                      <span class="grid-image-text">imageTitle</span>
-                </div>
-            </div>
+            <div class="grid-item-description">
+            <h3 class="description">Proposta Logo Fondazione Oristano</h3>
+            <hr class="section-line">
+            <h4>Questa è la proposta per il logo della Fondazione Oristano.
+                <br>Qui un esempio della proposta del logo e dei suoi possibili utilizzi:<a href="#" class="oristano-link">Oristano.pdf</a>
+                Il logo è stato riconosciuto dalla Fondazione Oristano.
+            </h4>
 
         </div>
+        </div>
     </div>
-    <div class="section" id="section2" style="background-color: red;">
+    <div class="section" id="section2" style="background-color: rgb(221, 221, 221);">
     <div class="grid-container">
         <div class="grid">
 
             <div class="grid-item">
-                <img class="grid-image" src="imageExample.jpg" alt="">
+                <img class="grid-image" src="../resources/main-images/img-example.jpg" alt="">
                 <div class="grid-image-overlay" >
                       <span class="grid-image-text">imageTitle</span>
                 </div>
@@ -159,7 +164,7 @@
 
        
     <script src="../libraries/jquery v3.6.3.pkgd.min.js"></script>
-    <!-- <script src="../script.js" defer></script> -->
+    <script src="script.js" defer></script>
     
 </body>
 </html>

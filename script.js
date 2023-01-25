@@ -16,7 +16,7 @@ $(window).on("load", function () {
 
   // const folder = "/Lavori per Sito"
   // const folder = "/images/Banners_Vero_jpg"
-  const folder = "/other_images"
+  const folder = "./other_images"
   let imagesArray = []
 
   // todo make async

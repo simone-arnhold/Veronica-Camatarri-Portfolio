@@ -6,27 +6,27 @@
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="icon" type="image/png" href="resources/logo-vero.png" />
+    <link rel="icon" type="image/png" href="./resources/logo-vero.png" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css"></link>
     <title>Portfolio JS Masonry</title>
 </head>
 <body>
-    <p2>projects.html</p2>
+    <span class="devtext">index.html</span>
     <div class="mobile-header">
 
         <a class="hamburger" aria-label="Menu" href="#">
             <i class="fa-solid fa-bars fa-2x"></i>
             <!-- <i class="fa-solid fa-x fa-2x"></i> -->
         </a>
-        <a href="#" class="mobile-logo-container"><h2 id="mobile-logo">Veronica Camatarri Illustration</h2></a>
+        <a href="#" class="mobile-logo-container"><p id="mobile-logo">Veronica Camatarri Illustration</p></a>
     </div>
 
     <div class="mobile-nav">
         <ul>
             <!-- https://www.compart.com/en/unicode/block/U+25A0 -->
-            <li><a href="" class="mnav-menu-item">●Projects</a></li>
+            <li><a href="/projects.html" class="mnav-menu-item">●Projects</a></li>
             <li><a href="" class="mnav-menu-item">●About</a></li>
             <!-- <li><a href="" class="mnav-menu-item">●Personal Work</a></li> -->
             <li><a href="" class="mnav-menu-item">●Contact</a></li>
@@ -37,7 +37,7 @@
     <div id="canvas">
         <header class="main-header">
             <div class="logo-container">
-                    <a href="">
+                    <a href="/">
                         <h1 class="logo">Veronica Camatarri Illustration
                         <!-- <img src="" alt="Veronica Art"> -->
                     </a>
@@ -48,7 +48,10 @@
                 <nav class="main-nav">
                     <ul class="main-nav--pages">
                         <li class="page-collection active-link">
-                            <a href="#">Projects</a>
+                            <a href="/">Home</a>
+                        </li>
+                        <li class="page-collection active-link">
+                            <a href="/projects.html">Projects</a>
                         </li>
                         <!-- <li class="page-collection">
                             <a href="/">Personal Work</a>
@@ -81,12 +84,70 @@
     </div>
     
     <div class="grid-container">
-        <div class="grid">
+        <div class="grid main-grid">
+            <div class="grid-item main-grid-item">
+                <a href="./projects.html" class="main-grid-link">
+                <img class="grid-image fixed-width" src="../resources/main-images/Asset 2.png" alt="">
+                <div class="bottom-text">Projects</div>
+                <div class="grid-image-overlay">
+                    
+                      <span class="grid-image-text text-visible">PROJECTS</span>
+                </div>
+            </a>
+            </div>
+
+            <div class="grid-item main-grid-item">
+                <a href="#" class="main-grid-link">
+                <img class="grid-image fixed-width" src="../resources/main-images/pexels-kevin-peters.jpg" alt="">
+                <div class="bottom-text">About</div>
+                <div class="grid-image-overlay">
+                      <span class="grid-image-text text-visible">ABOUT</span>
+                </div>
+            </a>
+            </div>
+
+            <div class="grid-item main-grid-item">
+                                <a href="#" class="main-grid-link">
+                <img class="grid-image fixed-width" src="../resources/main-images/blue-mail-icon.png" alt="">
+                <div class="bottom-text">Contact</div>
+                <div class="grid-image-overlay">
+                      <span class="grid-image-text text-visible">CONTACT</span>
+                </div>
+            </div>
+        </a>
         </div>
     </div>
 
-    <div class="gallery-overlay" >
-        <!-- onclick="this.style.visibility='hidden';" -->
+    <div class="footer-wrapper">
+        <div class="footer-contact">
+            <h2>Follow Me</h2>
+            <div class="icons-footer">
+            <!-- <h2 class="icons-footer">1 2 3 4</h2> -->
+            <ul class="social-icons">
+            <li class="icon-collection">
+                <a href="/"><i class="fa-solid fa-envelope"></i></a>
+            </li>
+            <li class="icon-collection">
+                <a href="/"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li class="icon-collection">
+                <a href="/"><i class="fa-brands fa-linkedin-in"></i></a>
+            </li>
+            <li class="icon-collection">
+                <a href="/"><i class="fa-brands fa-facebook-f"></i></a>
+            </li>
+        </ul>
+    </div>
+        </div>
+        <div class="footer">
+            <h2>Veronica Camatarri</h2>
+            <p>All Rights Reserved 2023</p>
+        </div>
+
+        
+
+
+    <!-- <div class="gallery-overlay" >
         <div class="gallery-overlay-outerbox">
             <div class="gallery-overlay-innerbox">
                 <img src="" alt="" class="gallery-overlay-image">
@@ -96,11 +157,9 @@
                 <div class="close-button"><i class="fa-solid fa-x"></i></div>
             <div class="gallery-overlay-title"></div>
         </div>
-    </div>
+    </div> -->
 
-
-    
-    <script src="libraries/jquery v3.6.3.pkgd.min.js"></script>
+    <script src="./libraries/jquery v3.6.3.pkgd.min.js"></script>
     <script src="script.js" defer></script>
     
 </body>

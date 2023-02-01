@@ -2,53 +2,170 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- https://github.com/simone-arnhold/Portfolio-Vero-JS-Masonry -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="icon" type="image/png" href="resources/logo-vero.png" />
+    <link rel="icon" type="image/png" href="./resources/logo-vero.png" />
 
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-    <!-- <link rel="stylesheet" href="style.css"></link> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css"></link>
-    <title>Portfolio JS Masonry/Contact</title>
+    <title>Portfolio JS Masonry</title>
 </head>
-<body id="contact-page">
+<body>
+    <span class="devtext">contact.html</span>
+    <div class="mobile-header">
 
-    <div class="bg-contact">
-        <div class="main-contact">
-            <!-- <span><a href="https://colorlib.com/etc/cf/ContactFrom_v2/index.html">https://colorlib.com/etc/cf/ContactFrom_v2/index.html</a></span> -->
-
-            <form class="contact-form validate-form">
-                <span class="contact-form-title">Contact Me</span>
-                <div class="wrap-input2 validate-input" data-validate="Name is required.">
-                    <input type="text" class="input2" name="name">
-                    <span class="focus-input2" data-placeholder="NAME">
-                    </span>
-                </div>
-                <div class="wrap-input2 validate-input" data-validate="Valid email is required.">
-                    <input type="text" class="input2" name="email">
-                    <span class="focus-input2" data-placeholder="EMAIL">
-                    </span>
-                </div>
-                <div class="wrap-input2 validate-input" data-validate="A message is required.">
-                    <textarea type="text" class="input2" name="message"></textarea>
-                        <span class="focus-input2" data-placeholder="MESSAGE">
-                        </span>
-                    
-                </div>
-                <div class="container-contact-form-btn">
-                    <div class="wrap-contact-form-btn">
-                        <div class="contact-form-bgbtn"></div>
-                        <button class="contact-form-btn">Send your Message</button>
-                    </div>
-                </div>
-
-
-            </form>
-
-        </div>
+        <a class="hamburger" aria-label="Menu" href="#">
+            <i class="fa-solid fa-bars fa-2x"></i>
+            <!-- <i class="fa-solid fa-x fa-2x"></i> -->
+        </a>
+        <a href="#" class="mobile-logo-container"><p id="mobile-logo">Veronica Camatarri Illustration</p></a>
     </div>
 
-    <script src="script.js"></script>
+    <div class="mobile-nav">
+        <ul>
+            <!-- https://www.compart.com/en/unicode/block/U+25A0 -->
+            <li><a href="/projects.html" class="mnav-menu-item">●Projects</a></li>
+            <li><a href="" class="mnav-menu-item">●About</a></li>
+            <!-- <li><a href="" class="mnav-menu-item">●Personal Work</a></li> -->
+            <li><a href="" class="mnav-menu-item">●Contact</a></li>
+        </ul>
+    </div>
+
+
+    <div id="canvas">
+        <header class="main-header">
+            <div class="logo-container">
+                    <a href="/">
+                        <h1 class="logo">Veronica Camatarri Illustration
+                    </a>
+                </h1>
+            </div>    
+            
+            <div id="topNav">
+                <nav class="main-nav">
+                    <ul class="main-nav--pages">
+                        <li class="page-collection active-link">
+                            <a href="/">Home</a>
+                        </li>
+                        <li class="page-collection active-link">
+                            <a href="/projects.html">Projects</a>
+                        </li>
+                        <!-- <li class="page-collection">
+                            <a href="/">Personal Work</a>
+                        </li> -->
+                        <li class="page-collection">
+                            <a href="/">About</a>
+                        </li>
+                        <li class="page-collection">
+                            <a href="/contact.html">Contact</a>
+                        </li>
+                    <!-- </ul> -->
+                    <!-- <ul class="social-icons"> -->
+                        <li class="icon-collection">
+                            <a href="/"><i class="fa-solid fa-envelope"></i></a>
+                        </li>
+                        <li class="icon-collection">
+                            <a href="/"><i class="fa-brands fa-instagram"></i></a>
+                        </li>
+                        <li class="icon-collection">
+                            <a href="/"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </li>
+                        <li class="icon-collection">
+                            <a href="/"><i class="fa-brands fa-facebook-f"></i></a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+    
+
+<div class="contact-section">
+    <div class="contact-info">
+        <h2>Contact</h2>
+        <p>Veronica Camatarri<br>
+        Milan, Italy<br><br>
+        ruolo corrente<br>
+        <br>
+        E-mail: velonica91@yahoo.it</p>
+      </div>
+    
+      
+      <div class="contact-form">
+      <form action="TODOformsubmit_ajax" method="POST">
+        <div class="form-group">
+        <label>Name <span>*</span><br></label>
+        <input type="text" name="first_name" class="input-small" placeholder="First" required>
+    <!-- </div>
+    <div class="form-group"> -->
+        <input type="text" name="last_name" class="input-small" placeholder="Last" required>
+    </div>
+    <div class="form-group">
+        <label>Email <span>*</span><br></label>
+        <input type="email" name="email" required>
+        </div>
+        <div class="form-group">
+        <label>Message <span>*</span><br></label>
+        <textarea name="message" required></textarea>
+        </div>
+      
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+</div>
+
+
+
+
+
+
+    <div class="footer-wrapper">
+        <div class="footer-contact">
+            <h2>Follow Me</h2>
+            <div class="icons-footer">
+            <!-- <h2 class="icons-footer">1 2 3 4</h2> -->
+            <ul class="social-icons">
+            <li class="icon-collection">
+                <a href="/"><i class="fa-solid fa-envelope"></i></a>
+            </li>
+            <li class="icon-collection">
+                <a href="/"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li class="icon-collection">
+                <a href="/"><i class="fa-brands fa-linkedin-in"></i></a>
+            </li>
+            <li class="icon-collection">
+                <a href="/"><i class="fa-brands fa-facebook-f"></i></a>
+            </li>
+        </ul>
+    </div>
+        </div>
+        <div class="footer">
+            <h2>Veronica Camatarri</h2>
+            <p>All Rights Reserved 2023</p>
+        </div>
+
+        
+
+
+    <!-- <div class="gallery-overlay" >
+        <div class="gallery-overlay-outerbox">
+            <div class="gallery-overlay-innerbox">
+                <img src="" alt="" class="gallery-overlay-image">
+                <a href="javascript:void(0)" class="gallery-overlay-nav gallery-overlay-prev"></a>
+                <a href="javascript:void(0)" class="gallery-overlay-nav gallery-overlay-next"></a>
+            </div>
+                <div class="close-button"><i class="fa-solid fa-x"></i></div>
+            <div class="gallery-overlay-title"></div>
+        </div>
+    </div> -->
+
+    <script src="./libraries/jquery v3.6.3.pkgd.min.js"></script>
+    <script src="script.js" defer></script>
+    
 </body>
 </html>
+

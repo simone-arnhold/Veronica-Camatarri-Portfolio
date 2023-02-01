@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="style.css"></link>
     <title>Portfolio JS Masonry</title>
 </head>
-<body>
-    <span>projects.html</span>
+<body class="index" >
+    <span class="devtext">projects.html</span>
     <div class="mobile-header">
 
         <a class="hamburger" aria-label="Menu" href="#">
@@ -33,13 +33,11 @@
         </ul>
     </div>
 
-
     <div id="canvas">
         <header class="main-header">
             <div class="logo-container">
                     <a href="/">
                         <h1 class="logo">Veronica Camatarri Illustration
-                        <!-- <img src="" alt="Veronica Art"> -->
                     </a>
                 </h1>
             </div>    
@@ -51,7 +49,7 @@
                             <a href="/">Home</a>
                         </li>
                         <li class="page-collection active-link">
-                            <a href="#">Projects</a>
+                            <a href="/projects.html">Projects</a>
                         </li>
                         <!-- <li class="page-collection">
                             <a href="/">Personal Work</a>
@@ -82,6 +80,7 @@
             </div>
         </header>
     </div>
+
     <div class="section-wrapper">
     <div class="section" id="section1" style="background-color: lightblue;">
     <div class="grid-container">
@@ -94,7 +93,7 @@
                 </div> -->
             </div>
             <div class="grid-item-description">
-            <h3 class="description">Proposta Logo Fondazione Oristano</h3>
+            <h3 class="description">Proposta Logo per Fondazione Oristano</h3>
             <hr class="section-line">
             <h4>Questa è la proposta per il logo della Fondazione Oristano.
                 <br>Qui un esempio della proposta del logo e dei suoi possibili utilizzi:<a href="#" class="oristano-link">Oristano.pdf</a>
@@ -104,6 +103,7 @@
         </div>
         </div>
     </div>
+</div>
     <div class="section" id="section2" style="background-color: rgb(221, 221, 221);">
     <div class="grid-container">
         <div class="grid">
@@ -114,26 +114,39 @@
                       <span class="grid-image-text">imageTitle</span>
                 </div>
             </div>
-        
 
-        </div>
-    </div>
-
-    <div class="gallery-overlay" >
-        <!-- onclick="this.style.visibility='hidden';" -->
-        <div class="gallery-overlay-outerbox">
-            <div class="gallery-overlay-innerbox">
-                <img src="" alt="" class="gallery-overlay-image">
-                <a href="javascript:void(0)" class="gallery-overlay-nav gallery-overlay-prev"></a>
-                <a href="javascript:void(0)" class="gallery-overlay-nav gallery-overlay-next"></a>
+            <div class="grid-item">
+                <img src="https://via.placeholder.com/150">                
             </div>
-                <div class="close-button"><i class="fa-solid fa-x"></i></div>
-            <div class="gallery-overlay-title"></div>
         </div>
     </div>
 </div>
+
+<div class="section" id="section3" style="background-color: rgb(170, 159, 159);">
+    <div class="grid-container">
+        <div class="grid">
+
+            <div class="grid-item">
+                <img src="https://via.placeholder.com/150">                
+            </div>
+        </div>
+    </div>
 </div>
 
+
+
+<div class="gallery-overlay" >
+    <!-- onclick="this.style.visibility='hidden';" -->
+    <div class="gallery-overlay-outerbox">
+        <div class="gallery-overlay-innerbox">
+            <img src="" alt="" class="gallery-overlay-image">
+            <a href="javascript:void(0)" class="gallery-overlay-nav gallery-overlay-prev"></a>
+            <a href="javascript:void(0)" class="gallery-overlay-nav gallery-overlay-next"></a>
+        </div>
+            <div class="close-button"><i class="fa-solid fa-x"></i></div>
+        <div class="gallery-overlay-title"></div>
+    </div>
+</div>
 
 
     <div class="footer-wrapper">

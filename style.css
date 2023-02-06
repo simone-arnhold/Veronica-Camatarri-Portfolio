@@ -4,13 +4,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Quattrocento&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kenia&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 /* import Kenia, Bubblegum */
 
 @media only screen and (max-width: 750px) {
   body {
     max-width: 100%;
     overflow-x: hidden;
-    font-family: "Lato";
+    /* font-family: 'Source Sans Pro', sans-serif; */
     /* todo temp for dev */
     /* background-color: lightblue;  */
   }
@@ -254,7 +256,9 @@ h3 {
 
 .logo a {
   /* font-family: "Kenia"; */
-  font-family: "Roboto";
+  /* font-family: "Roboto"; */
+  /* font-family: 'Dancing Script', cursive; */
+  font-family: "Playfair Display", serif;
   font-weight: 700;
   transition: color 500ms ease-in-out;
   /* color: #551a8b; */
@@ -388,7 +392,7 @@ a {
 .icon-collection i {
   vertical-align: bottom;
   padding: 6px;
-  /* margin: 12px; */
+  margin-left: 10px;
   transition: all 0.2s ease-in-out;
 }
 
@@ -716,10 +720,12 @@ li.animate {
   float: left;
   list-style: none;
   display: flex;
+  transform: scale(1.1);
 }
 
 .social-icons a {
   color: #fff;
+  margin-left: 20px;
 }
 
 .footer {

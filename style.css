@@ -488,6 +488,11 @@ li.animate {
   transition: all 0.3s ease-in-out;
 }
 
+.section-image {
+  max-height: 200px;
+  filter: drop-shadow(4px 10px 4px rgba(0, 0, 0, 0.1));
+}
+
 .gallery-overlay {
   object-fit: cover;
   display: flex;
@@ -748,7 +753,10 @@ li.animate {
 
 .section {
   display: flex;
-  padding: 25px;
+  padding-top: 12vh;
+  padding-bottom: 12vh;
+  padding-left: 7.5vw;
+  padding-right: 7.5vw;
 }
 
 .section-image {

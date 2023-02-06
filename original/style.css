@@ -189,7 +189,6 @@ button {
 } */
 
 #canvas {
-  max-width: 1200px;
   margin: 10px auto;
   padding: 15px;
 }

@@ -40,10 +40,11 @@
     top: 0;
     width: 100%;
     display: block !important;
-    background-color: #58554f;
+    background-color: #333;
     height: 40px;
     padding: 10px;
     box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.6);
+    margin-bottom: 30px;
   }
 
   a.hamburger {
@@ -65,7 +66,8 @@
     transform: translate(-50%, -50%);
     /* font-family: "Kenia"; */
     /* font-family: "Roboto"; */
-    font-family: "Lato";
+    /* font-family: "Lato"; */
+    font-family: "Playfair Display", serif;
     font-weight: 300;
     font-size: 20px;
     white-space: nowrap !important;
@@ -216,8 +218,11 @@ button {
   margin-left: 0.5rem;
 }
 
-h3 {
-  font-weight: 400;
+h2,
+h3,
+h4 {
+  /* font-weight: 400; */
+  font-family: "Playfair Display", serif;
 }
 
 /* .mobile-header,
@@ -326,7 +331,8 @@ h3 {
   height: 2px;
   bottom: 10px;
   left: 0;
-  background-color: #58554f;
+  /* background-color: #58554f; */
+  background-color: #333;
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out;
@@ -685,7 +691,6 @@ li.animate {
 
 .main-grid-item {
   grid-row: 1;
-  /* height: 50vh; */
 }
 
 .fixed-width {
@@ -753,8 +758,8 @@ li.animate {
 
 .section {
   display: flex;
-  padding-top: 12vh;
-  padding-bottom: 12vh;
+  padding-top: 9.5vh;
+  padding-bottom: 9.5vh;
   padding-left: 7.5vw;
   padding-right: 7.5vw;
 }
@@ -787,6 +792,23 @@ hr.section-line {
 
 /* CONTACT  --------- */
 
+/* changed in media screen */
+.head-img-container-fixed {
+  width: 600px;
+  height: 300px;
+  margin: 30px;
+}
+
+.head-img-contact {
+  width: 600px;
+  height: 300px;
+  object-fit: cover;
+  object-position: 0% 22%;
+  border-radius: 15px;
+  box-shadow: rgba(145, 8, 104, 0.329) 0px 6px 20px -6px;
+  /* box-shadow: 0 0 10px 4px rgba(104, 0, 73, 0.459); */
+}
+
 .contact-section {
   display: flex;
   /* height: 40vh; */
@@ -798,12 +820,13 @@ hr.section-line {
 }
 
 .contact-info {
-  width: 50%;
+  width: 45%;
   /* max-height: 20vh; */
   /* background-color: green; */
   text-align: right;
   padding-top: 20px;
   padding-right: 5%;
+  padding-left: 5%;
   /* height: 20vh; */
 }
 

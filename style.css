@@ -764,6 +764,14 @@ li.animate {
   padding-right: 7.5vw;
 }
 
+.section.style1 {
+  background-color: #eee7d1
+}
+
+.section.style2 {
+  background-color: auto;
+}
+
 .section-image {
   justify-content: flex-start;
   /* flex-basis: 30vw; */

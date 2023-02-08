@@ -768,10 +768,9 @@ li.animate {
   padding-right: 7.5vw;
 }
 
-.full-width {
-  width: 100%;
-  align-items: center;
-  justify-content: center;
+.full-width {width: 100%;
+/* align-items: center;
+justify-content: center; */
 }
 
 .section.style1 {

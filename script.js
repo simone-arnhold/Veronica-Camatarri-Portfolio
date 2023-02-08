@@ -1,6 +1,4 @@
 $(window).on("load", function () {
-  // if ($("body").is(".index")) {
-  //only apply the following to .index page
   // mobile nav logic
   const mobileNav = document.querySelector(".hamburger")
   const navMenu = document.querySelector(".mobile-nav")
@@ -17,48 +15,49 @@ $(window).on("load", function () {
   })
 
   /*
+  
+  
+    // const folder = "/Lavori per Sito"
+    // const folder = "/images/Banners_Vero_jpg"
+    const folder = "./other_images"
+  
+  
+    // todo make async
+    function processImages() {
+      $.ajax({
+        // type: "method",
+        url: folder,
+        async: false, //todo
+        success: function (data) {
+          $(data)
+            .find("a")
+            .attr("href", function (i, val) {
+              if (val.match(/\.(jpe?g|png|gif)$/)) {
+                imagesArray.push(val.substring(val.lastIndexOf("/") + 1))
+  
+                title = val
+                  .match(/\/.*\/(.*)\.(jpe?g|png|gif)/)[1]
+                  .replaceAll("-", " ")
+                  .replaceAll(/%20/g, " ")
+                  .replaceAll("_", " ")
+  
+                $(".grid").append(
+                  `
+                <div class="grid-item">
+                  <img class="grid-image" src="${val}" alt="">
+                  <div class="grid-image-overlay" >
+                        <span class="grid-image-text">${title}</span>
+                  </div>
+                </div>`
+                )
+                // must wait until ajax finishes
+              }
+            })
+        },
+      })
+    }
+  
 
-  // const folder = "/Lavori per Sito"
-  // const folder = "/images/Banners_Vero_jpg"
-  const folder = "./other_images"
-  let imagesArray = []
-
-  // todo make async
-  function processImages() {
-    $.ajax({
-      // type: "method",
-      url: folder,
-      async: false, //todo
-      success: function (data) {
-        $(data)
-          .find("a")
-          .attr("href", function (i, val) {
-            if (val.match(/\.(jpe?g|png|gif)$/)) {
-              imagesArray.push(val.substring(val.lastIndexOf("/") + 1))
-
-              title = val
-                .match(/\/.*\/(.*)\.(jpe?g|png|gif)/)[1]
-                .replaceAll("-", " ")
-                .replaceAll(/%20/g, " ")
-                .replaceAll("_", " ")
-
-              $(".grid").append(
-                `
-              <div class="grid-item">
-                <img class="grid-image" src="${val}" alt="">
-                <div class="grid-image-overlay" >
-                      <span class="grid-image-text">${title}</span>
-                </div>
-              </div>`
-              )
-              // must wait until ajax finishes
-            }
-          })
-      },
-    })
-  }
-
-  */
 
   // gallery overlay logic
   // $.when(processImages()).done(() => {
@@ -152,6 +151,5 @@ $(window).on("load", function () {
       makeOverlayTitle(overlayImage.src)
     })
   })
-  // })
-  // }
+  */
 })

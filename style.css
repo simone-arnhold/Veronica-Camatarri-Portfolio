@@ -85,7 +85,7 @@
   }
 
   .grid-container {
-    margin: 0px 10px;
+    margin: 0px 50px;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -940,8 +940,6 @@ input.error {
   margin-top: 30px;
   object-fit: cover;
 }
-
-.about-img {}
 
 .contact-img {
   height: 400px;

@@ -44,7 +44,7 @@
     height: 40px;
     padding: 10px;
     box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.6);
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
   }
 
   a.hamburger {
@@ -165,6 +165,10 @@
   .head-img-contact {
     width: 100%;
     overflow: hidden;
+  }
+
+  .section-about {
+    margin-top: 30px;
   }
 }
 
@@ -443,13 +447,6 @@ a {
   position: relative;
   float: left;
   margin: 15px;
-  /* margin: 7px; */
-  /* flex: 1; */
-  /* box-shadow: 0 0 10px 4px rgba(0,0,0,0.1); */
-  /* background: #D26; */
-  /* border: 2px solid #58554f; */
-  /* border-color: hsla(0, 0%, 0%, 0.5); */
-  /* border-radius: 5px; */
 }
 
 .grid a,
@@ -708,7 +705,7 @@ li.animate {
   /* width: calc(1500px + 3vw); */
   width: 300px;
   height: 500px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .footer-wrapper {
@@ -773,6 +770,7 @@ li.animate {
   padding-bottom: 9.5vh;
   padding-left: 7.5vw;
   padding-right: 7.5vw;
+  transition: filter .2s ease-out;
 }
 
 .full-width {
@@ -782,11 +780,18 @@ justify-content: center; */
 }
 
 .section.style1 {
-  background-color: #eee7d1
+  background-color: #eee7d1;
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
 }
 
 .section.style2 {
   background-color: auto;
+}
+
+.section.style1:hover,
+.section.style2:hover {
+  filter: brightness(.8);
+  filter: saturate(1.8)
 }
 
 .section-image {
@@ -818,19 +823,21 @@ hr.section-line {
 /* CONTACT  --------- */
 
 /* changed in media screen */
-.head-img-container-fixed {
+/* .head-img-container-fixed {
   width: 600px;
   height: 300px;
   margin: 30px;
-}
+} */
 
 .head-img-contact {
   width: 600px;
+  /* max-width: 60vw; */
   height: 300px;
   object-fit: cover;
   object-position: 0% 22%;
   border-radius: 15px;
   box-shadow: rgba(145, 8, 104, 0.329) 0px 6px 20px -6px;
+  margin-top: 30px;
   /* box-shadow: 0 0 10px 4px rgba(104, 0, 73, 0.459); */
 }
 
@@ -931,6 +938,15 @@ input.error {
   max-width: 600px;
   margin: 30px;
   text-justify: auto;
+}
+
+.about-img {
+  width: 600px;
+  max-width: 60vw;
+  /* box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1); */
+  box-shadow: rgba(145, 8, 104, 0.329) 0px 6px 20px -6px;
+  border-radius: 15px;
+  margin-top: 30px;
 }
 
 /* ABOUT END ------------- */

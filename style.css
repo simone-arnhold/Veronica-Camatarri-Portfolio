@@ -30,19 +30,6 @@
     margin-right: 0px !important;
   }
 
-  /* .mobile-header {
-  position: fixed;
-  z-index: 9;
-  left: 0;
-  top: 0;
-  width: 100%;
-  display: block !important;
-  background-color: #333;
-  height: 64px;
-  padding: 10px;
-  box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.6);
-} */
-
   .mobile-header {
     position: fixed;
     display: flex !important;
@@ -115,6 +102,7 @@ left: 20%; */
   }
 
   .grid-container {
+    margin: 0px 50px;
     margin: 0px 50px;
     height: 100vh;
     display: flex;

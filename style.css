@@ -49,7 +49,7 @@
     align-items: center;
     justify-content: center;
     z-index: 7;
-    margin: 0;
+    margin-left: 10px;
     padding: 10px;
     line-height: 1em;
     /* position: relative; */
@@ -110,7 +110,6 @@ left: 20%; */
   }
 
   .grid {
-    margin-top: 100px !important;
     flex-wrap: wrap;
     /* flex-direction: column; */
     align-items: center;
@@ -214,7 +213,8 @@ body {
   font-weight: 300;
   font-style: normal;
   line-height: 1.2em;
-  font-size: 15px;
+  font-size: 16px;
+  /* word-spacing: 105%; */
   background-image: none;
   background-size: auto;
 
@@ -790,7 +790,7 @@ li.animate {
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
 .full-width {
@@ -940,7 +940,7 @@ input.error {
 
 .about-text {
   max-width: 600px;
-  margin: 30px;
+  margin: 20px;
   text-justify: auto;
 }
 

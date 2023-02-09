@@ -777,7 +777,7 @@ li.animate {
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 .full-width {
@@ -923,12 +923,7 @@ input.error {
 
 /* ABOUT ----------*/
 
-.section-about {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
-}
+
 
 .about-text {
   max-width: 600px;

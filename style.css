@@ -436,7 +436,7 @@ a {
   align-items: center;
   justify-content: center;
   /* height: 100%; */
-  margin: 80px 20px;
+  margin: 120px 20px;
 }
 
 .grid {
@@ -856,7 +856,7 @@ hr.section-line {
   /* max-height: 50vh; */
   flex-direction: row;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 20px;
   align-items: top;
 }
 

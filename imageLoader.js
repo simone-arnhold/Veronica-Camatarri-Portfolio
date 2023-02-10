@@ -1,6 +1,6 @@
 $(window).on("load", function () {
 
-  const folder = "resources/main-images/_fisc"
+  const folder = "resources/main-images/fisc"
   let imagesArray = []
 
   // todo make async

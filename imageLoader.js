@@ -13,8 +13,11 @@ $(window).on("load", function () {
         $(data)
           .find("a")
           .attr("href", function (i, val) {
+            // val = ""
             if (val.match(/\.(jpe?g|png|gif)$/)) {
               imagesArray.push(val.substring(val.lastIndexOf("/") + 1))
+              val = val.substring(1)
+              console.log(val)
 
               title = val
                 .match(/\/.*\/(.*)\.(jpe?g|png|gif)/)[1]
@@ -24,15 +27,19 @@ $(window).on("load", function () {
 
               $(".grid").append(
                 `
+                <div style="width: 20px; height: 20px; background-color: lightblue"></div>
               <div class="grid-item">
                 <img class="grid-image" src="${val}" alt="">
                 <div class="grid-image-overlay" >
                       <span class="grid-image-text">${title}</span>
                 </div>
-              </div>`
+              </div>
+              `
               )
+
               // must wait until ajax finishes
             }
+            // console.log(imagesArray)
           })
       },
     })

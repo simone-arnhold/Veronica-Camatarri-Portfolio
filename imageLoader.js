@@ -13,7 +13,6 @@ $(window).on("load", function () {
         $(data)
           .find("a")
           .attr("href", function (i, val) {
-            // val = ""
             if (val.match(/\.(jpe?g|png|gif)$/)) {
               imagesArray.push(val.substring(val.lastIndexOf("/") + 1))
               val = val.substring(1)

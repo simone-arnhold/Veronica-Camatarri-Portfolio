@@ -26,7 +26,6 @@ $(window).on("load", function () {
 
               $(".grid").append(
                 `
-                <div style="width: 20px; height: 20px; background-color: lightblue"></div>
               <div class="grid-item">
                 <img class="grid-image" src="${val}" alt="">
                 <div class="grid-image-overlay" >

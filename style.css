@@ -255,6 +255,14 @@ h4 {
   font-family: "Playfair Display", serif;
 }
 
+h4 {
+  font-size: 20px;
+}
+
+span {
+  font-size: 18px;
+}
+
 .mobile-header,
 .mobile-nav {
   display: none;

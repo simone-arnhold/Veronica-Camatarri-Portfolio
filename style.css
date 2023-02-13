@@ -200,6 +200,15 @@ left: 20%; */
   .main-section {
     margin-top: 80px;
   }
+
+  .mobile-spacer {
+    width: 100%;
+    height: 64px;
+  }
+
+  .sub {
+    margin-top: 50px;
+  }
 }
 
 * {

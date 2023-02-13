@@ -1,5 +1,6 @@
 window.addEventListener('load', function () {
 
+
   let imagesArray = [document.querySelectorAll(".grid-image")]
   console.log(imagesArray)
 
@@ -90,7 +91,7 @@ window.addEventListener('load', function () {
       console.log("new imgIndex: " + imgIndex)
 
       console.log(overlayImage.src)
-      makeOverlayTitle(overlayImage.src).getAttribute("src")
+      makeOverlayTitle(overlayImage.getAttribute("src"))
     })
   })
 })

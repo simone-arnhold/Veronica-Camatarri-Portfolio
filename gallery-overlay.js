@@ -1,6 +1,6 @@
 window.addEventListener('load', function () {
 
-  let imagesArray = document.querySelectorAll(".grid-image")
+  let imagesArray = [document.querySelectorAll(".grid-image")]
   console.log(imagesArray)
 
   let gridItems = document.querySelectorAll(".grid-item")
@@ -85,11 +85,12 @@ window.addEventListener('load', function () {
           imgIndex = 0
         }
       }
-      overlayImage.src = folder + "/" + imagesArray[imgIndex]
+      // overlayImage.src = folder + "/" + imagesArray[imgIndex]
+      overlayImage.src = imagesArray[imgIndex]
       console.log("new imgIndex: " + imgIndex)
 
       console.log(overlayImage.src)
-      makeOverlayTitle(overlayImage.src)
+      makeOverlayTitle(overlayImage.src).getAttribute("src")
     })
   })
 })

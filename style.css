@@ -512,6 +512,7 @@ li.animate {
 
 .index-element {
   width: 300px;
+  height: 300px;
   border-radius: 150px !important;
 }
 
@@ -719,9 +720,9 @@ li.animate {
 
 .fixed-width {
   /* width: calc(1500px + 3vw); */
-  width: 300px;
-  height: 500px;
-  object-fit: cover;
+  /* width: 300px;
+height: 500px;
+object-fit: cover; */
 }
 
 .footer-wrapper {

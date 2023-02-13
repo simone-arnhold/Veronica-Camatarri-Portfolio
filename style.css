@@ -300,7 +300,7 @@ span {
   margin-right: 80px;
 }
 
-.logo a {
+.logo {
   /* font-family: "Kenia"; */
   /* font-family: "Roboto"; */
   /* font-family: 'Dancing Script', cursive; */
@@ -308,9 +308,14 @@ span {
   font-weight: 700;
   transition: color 500ms ease-in-out;
   /* color: #551a8b; */
+  /* line-height: 1; */
 }
 
-.logo a:hover {
+h4.logo {
+  margin: 10px;
+}
+
+.logoa:hover {
   /* color: #551a8b; */
   color: #000;
   color: -moz-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);

@@ -315,6 +315,7 @@ span {
 }
 
 .logo {
+  text-align: center;
   /* font-family: "Kenia"; */
   /* font-family: "Roboto"; */
   /* font-family: 'Dancing Script', cursive; */
@@ -329,7 +330,7 @@ h4.logo {
   margin: 10px;
 }
 
-.logoa:hover {
+.logo a:hover {
   /* color: #551a8b; */
   color: #000;
   color: -moz-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);

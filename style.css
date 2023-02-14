@@ -186,7 +186,11 @@ left: 20%; */
   }
 
   .section {
-    display: block !important;
+    /* display: block !important; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .top-img {
@@ -235,7 +239,7 @@ body {
   /* background: #f5eee1; */
   font-weight: 300;
   font-style: normal;
-  line-height: 1.2em;
+  /* line-height: 1.2em; */
   font-size: 16px;
   /* word-spacing: 105%; */
   background-image: none;
@@ -536,6 +540,9 @@ li.animate {
 .section-image {
   max-height: 300px;
   filter: drop-shadow(4px 10px 4px rgba(0, 0, 0, 0.1));
+  /* margin-bottom: 20px; */
+  /* border-radius: 150px; */
+  border-radius: 15px;
 }
 
 .gallery-overlay {
@@ -748,7 +755,7 @@ li.animate {
   /* background-color: #da7983; */
   color: #fff;
   text-align: left;
-  z-index: 30;
+  z-index: 4;
   margin-top: 30px;
 }
 
@@ -794,11 +801,14 @@ li.animate {
 
 .section {
   display: flex;
-  padding-top: 9.5vh;
-  padding-bottom: 9.5vh;
-  padding-left: 7.5vw;
-  padding-right: 7.5vw;
+  padding-top: 7.5vh;
+  padding-bottom: 7.5vh;
+  padding-left: 5.5vw;
+  padding-right: 5.5vw;
   transition: filter .2s ease-out;
+  justify-content: center;
+  align-items: center;
+  /* cursor: pointer; */
 }
 
 .main-section {
@@ -811,12 +821,14 @@ li.animate {
 
 .full-width {
   width: 100%;
+  padding: 20px;
   /* align-items: center;
 justify-content: center; */
 }
 
 .section.style1 {
   background-color: #eee7d1;
+  /* background-color: #c5ebfa; */
   box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -827,12 +839,13 @@ justify-content: center; */
 .section.style1:hover,
 .section.style2:hover {
   filter: brightness(.8);
-  filter: saturate(1.8)
+  filter: saturate(1.5)
 }
 
 .section-image {
   justify-content: flex-start;
   /* flex-basis: 30vw; */
+  /* margin: 0px20px 20px 20px; */
 }
 
 .devtext {
@@ -844,6 +857,7 @@ justify-content: center; */
   /* margin-right: 30px; */
   margin: 10px 30px;
   flex-basis: 60vw;
+
 }
 
 hr.section-line {
@@ -983,4 +997,25 @@ input.error {
 
 .project-section-header {
   margin-top: 50px;
+}
+
+.round-button {
+  display: block;
+  /* flex-basis: 100%; */
+  max-width: 180px;
+  margin-left: auto;
+  text-justify: center;
+  font-size: 20px;
+  background-color: #eee7d1;
+  border-radius: 30px;
+  padding: 15px 30px 15px 30px;
+  margin: 30px 0px 20px 0px;
+  /* text-decoration: double; */
+  text-transform: uppercase;
+  /* color: #fff; */
+  box-shadow: 0 0 10px 4px rgba(73, 152, 255, 0.1);
+}
+
+.round-button:hover {
+  filter: saturate(2)
 }

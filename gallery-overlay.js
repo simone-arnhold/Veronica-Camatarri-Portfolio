@@ -91,7 +91,7 @@ window.addEventListener('load', function () {
       console.log("new imgIndex: " + imgIndex)
 
       console.log(overlayImage.src)
-      makeOverlayTitle(overlayImage.getAttribute("src"))
+      makeOverlayTitle(overlayImage)
     })
   })
 })

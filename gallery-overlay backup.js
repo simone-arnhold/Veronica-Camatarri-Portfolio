@@ -35,7 +35,7 @@ window.addEventListener('load', function () {
       .replaceAll("_", " ")
     overlayImage.src = _imgURL
     overlayTitle.innerHTML = `${newOverlayTitle}`
-    // console.log(typeof (_imgURL))
+    console.log(typeof (_imgURL))
   }
 
   gridItems.forEach((gridItem) => {
@@ -43,7 +43,7 @@ window.addEventListener('load', function () {
       // let imgURL = gridItem.querySelector("img").src
       // let gridImage = gridItem.ch
       let imgURL = gridItem.querySelector("img").src
-      // console.log("imgurl: ", imgURL)
+      console.log("imgurl: ", imgURL)
       overlayImage = document.querySelector(".gallery-overlay-image")
       overlayTitle = document.querySelector(".gallery-overlay-title")
       makeOverlayTitle(imgURL)
@@ -63,14 +63,14 @@ window.addEventListener('load', function () {
         .querySelector(".gallery-overlay-image")
         .getAttribute("src")
 
-      // console.log("overlayImageURL: ", overlayImageURL)
+      console.log("overlayImageURL: ", overlayImageURL)
 
       // console.log("overlayImageURL: " + overlayImageURL)
       // console.log("imagesarray: ", imagesArray)
 
       // check index of current image
       let imgIndex = imagesArray.indexOf(overlayImageURL)
-      // console.log("current imgIndex: " + imgIndex)
+      console.log("current imgIndex: " + imgIndex)
 
       // put the previous image in the index as overlayImage
 
@@ -80,7 +80,7 @@ window.addEventListener('load', function () {
         if (imgIndex < 0) {
           // loop array to the end
           imgIndex = imagesArray.length - 1
-          // console.log("reset imgIndex: " + imgIndex)
+          console.log("reset imgIndex: " + imgIndex)
         }
       }
       //nextBtn
@@ -92,7 +92,7 @@ window.addEventListener('load', function () {
       }
       // overlayImage.src = folder + "/" + imagesArray[imgIndex]
       overlayImage.src = imagesArray[imgIndex]
-      // console.log("new imgIndex: " + imgIndex)
+      console.log("new imgIndex: " + imgIndex)
 
       console.log(overlayImage.src)
       makeOverlayTitle(overlayImage)

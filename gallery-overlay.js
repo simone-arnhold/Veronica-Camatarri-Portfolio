@@ -19,9 +19,9 @@ window.addEventListener('load', function () {
     galleryOverlay.style.visibility = "hidden"
   }
   // necessary to stop clicks on the image from closing the overlay
-  galleryOverlayOuterbox.addEventListener("click", (e) => { e.stopPropagation })
 
-  // galleryOverlay.addEventListener("click", closeOverlay) //todo reenable
+  galleryOverlay.addEventListener("click", closeOverlay) //todo reenable
+  galleryOverlayOuterbox.addEventListener("click", (e) => { e.stopPropagation() })
   closeBtn.addEventListener("click", closeOverlay)
 
   function makeOverlayTitle(_imgURL) {
@@ -35,6 +35,7 @@ window.addEventListener('load', function () {
       .replaceAll("_", " ")
     overlayImage.src = _imgURL
     overlayTitle.innerHTML = `${newOverlayTitle}`
+
     // console.log(typeof (_imgURL))
   }
 

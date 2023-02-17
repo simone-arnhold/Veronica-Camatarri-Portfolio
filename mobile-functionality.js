@@ -1,4 +1,4 @@
-$(window).on("load", function () {
+window.addEventListener("load", function () {
   // mobile nav logic
   const mobileNav = document.querySelector(".hamburger")
   const navMenu = document.querySelector(".mobile-nav")

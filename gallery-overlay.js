@@ -25,11 +25,10 @@ galleryOverlayOuterbox.addEventListener("click", (e) => { e.stopPropagation() })
 closeBtn.addEventListener("click", closeOverlay)
 
 function makeOverlayTitle(_imgURL) {
-  // _imgURL = _imgURL.toString()
-  // console.log("_imgurl: ", _imgURL)
-  // console.log(typeof (_imgURL))
+  console.log("_imgurl: ", _imgURL)
+  console.log(typeof (_imgURL))
   let newOverlayTitle = _imgURL
-    .substring(_imgURL.lastIndexOf("/") + 1, _imgURL.lastIndexOf("."))
+    .substring(_imgURL.toString().lastIndexOf("/") + 1, _imgURL.lastIndexOf("."))
     .replaceAll("-", " ")
     .replaceAll(/%20/g, " ")
     .replaceAll("_", " ")
@@ -86,7 +85,8 @@ btnArray.forEach((elem) => {
     }
     //nextBtn
     if (e.target == nextBtn) {
-      imgIndex++
+      +
+        imgIndex++
       if (imgIndex >= imagesArray.length) {
         imgIndex = 0
       }

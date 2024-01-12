@@ -2,7 +2,169 @@
 /* https://tailwindcss.com/ */
 
 /* portfolio examples */
+/* https://www.behance.net/gallery/136197687/Graphic-Designer */
+/* https://www.behance.net/gallery/135940249/Graphic-Design-Portfolio */
+/* https://www.behance.net/gallery/13497273/CV-Portfolio-Mailer */
 
-/* pink https://www.behance.net/gallery/146736515/Portfolio-Graphic-Designer */
 /* animated https://www.behance.net/gallery/149573517/Graphic-Design-Portfolio?tracking_source=search_projects_views&l=3 */
 /* futuristic dark https://www.behance.net/gallery/135940249/Graphic-Design-Portfolio */
+/* pink https://www.behance.net/gallery/146736515/Portfolio-Graphic-Designer */
+
+/* for header-test-2 remove later */
+@font-face {
+  font-family: "Silk Serif Regular";
+  src: url("resources/fonts/Silk Serif Regular.otf");
+}
+@font-face {
+  font-family: "Silk Serif ExtraLight";
+  src: url("resources/fonts/Silk Serif ExtraLight.otf");
+}
+@font-face {
+  font-family: "Toma Sans";
+  src: url("resources/fonts/TomaSans-Regular.otf");
+}
+/* fine for header-test-2 remove later */
+
+@font-face {
+  font-family: "Century Gothic";
+  src: url("resources/fonts/GOTHIC.TTF");
+}
+@font-face {
+  font-family: "Century Gothic Bold";
+  src: url("resources/fonts/GOTHICB0.TTF");
+}
+
+/* color variables */
+:root {
+  --lightgrey: #e6e7e8;
+  --darkpurple: #262262;
+  --blue: #2e3192;
+  --black: #000;
+  --white: #fff;
+}
+
+/* boilerplate reset css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Century Gothic", sans-serif;
+  /* font-family: "Toma Sans", sans-serif; */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  height: 100vh;
+}
+
+.wrapper {
+  width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Century Gothic Bold", sans-serif;
+  margin: none;
+  padding: none;
+  /* font-weight: 400; */
+}
+
+/* WEBSITE STYLE */
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 600px;
+  padding: 40px;
+}
+
+header .titolo {
+  font-size: xxx-large;
+}
+
+.logo,
+.menu ul li {
+  width: fit-content;
+  margin-left: auto;
+  text-align: end;
+  list-style-type: none;
+}
+/* header-test-3 */
+
+/* fine header-test-3 */
+/* header-test-1 */
+header.header-test-1 {
+  background: linear-gradient(40deg, #fff, #ffd0b2, #fa8998, #ca7fc8);
+}
+/* fine header-test-1 */
+
+/* header-test-2 */
+header.header-test-2 {
+  background: #161616;
+  color: #fff;
+}
+.header-test-2 .titolo {
+  /* text-align: center; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-test-2 .titolo h1 {
+  position: absolute;
+  z-index: 5;
+  transition: 300ms ease;
+  cursor: pointer;
+}
+
+.header-test-2 .titolo h1:hover {
+  transform: scale(1.05);
+}
+
+.circle-wrapper {
+  position: relative;
+  z-index: 0;
+  transition: filter 300ms ease;
+}
+
+.circle {
+  flex: 1;
+  display: inline-block;
+  width: 150px;
+  height: 300px;
+  border-radius: 0% 150px 150px 0%;
+  background: linear-gradient(
+    180deg,
+    #f2e6a3,
+    #65afa3,
+    #50758d,
+    #524077,
+    #4f3670
+  );
+  filter: blur(1px);
+  /* mask-image: url("resources/images/metal-texture-with-dust-scratches-cracks-textured-backgrounds-med.jpg");
+  mask-repeat: repeat;
+  mask-size: cover; */
+}
+.circle:nth-child(2) {
+  transform: rotate(180deg);
+  /* transform: scaleX(-1); */
+}
+
+.menu ul li {
+  filter: brightness(0.7);
+  transition: 300ms ease;
+  cursor: pointer;
+  margin-bottom: 0.3em;
+}
+.menu ul li:hover {
+  filter: brightness(1);
+}
+/* fine header-test-2 */

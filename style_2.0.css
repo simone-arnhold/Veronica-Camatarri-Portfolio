@@ -9,6 +9,8 @@
 /* animated https://www.behance.net/gallery/149573517/Graphic-Design-Portfolio?tracking_source=search_projects_views&l=3 */
 /* futuristic dark https://www.behance.net/gallery/135940249/Graphic-Design-Portfolio */
 /* pink https://www.behance.net/gallery/146736515/Portfolio-Graphic-Designer */
+/* korpai https://danielkorpai.com/ */
+/* list  https://hackernoon.com/21-best-developer-portfolio-examples-p61j31wi */
 
 /* for header-test-2 remove later */
 @font-face {
@@ -52,12 +54,14 @@
 
 body {
   font-family: "Century Gothic", sans-serif;
+  font-size: 1.1em;
   /* font-family: "Toma Sans", sans-serif; */
   /* display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center; */
   height: 100vh;
+  /* font-weight: 400; */
 }
 
 .wrapper {
@@ -67,12 +71,40 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
+  /* font-family: "Silk Serif Regular", sans-serif; */
   font-family: "Century Gothic Bold", sans-serif;
   margin: none;
   padding: none;
-  /* font-weight: 400; */
 }
+
+/* animations */
+/* @-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(120px);
+    transform: translateY(120px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+} */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(120px);
+    transform: translateY(120px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+/* fine animations */
 
 /* WEBSITE STYLE */
 
@@ -86,7 +118,7 @@ header {
 }
 
 header .titolo {
-  font-size: xxx-large;
+  font-size: xx-large;
 }
 
 .logo,
@@ -97,6 +129,28 @@ header .titolo {
   list-style-type: none;
 }
 /* header-test-3 */
+header.header-test-3 {
+  background: var(--lightgrey);
+}
+header.header-test-3 * {
+  color: var(--blue);
+}
+header.header-test-3 h1,
+header.header-test-3 h2 {
+  /* center element */
+  /* position: absolute;
+  transform: translateY(-50%); */
+}
+
+hr.linea-doppia {
+  /* transform: translateY(3px); */
+  border-top: 3px solid;
+  width: 33%;
+}
+hr.linea-singola {
+  border-top: 1px solid;
+  transform: translateY(-2px);
+}
 
 /* fine header-test-3 */
 /* header-test-1 */
@@ -115,6 +169,7 @@ header.header-test-2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: xxx-large;
 }
 
 .header-test-2 .titolo h1 {
@@ -159,6 +214,7 @@ header.header-test-2 {
 }
 
 .menu ul li {
+  /* font-size: 1.1em; */
   filter: brightness(0.7);
   transition: 300ms ease;
   cursor: pointer;
@@ -168,3 +224,20 @@ header.header-test-2 {
   filter: brightness(1);
 }
 /* fine header-test-2 */
+
+/* main */
+main {
+  padding: 40px;
+  background: var(--darkpurple);
+  color: var(--white);
+  height: 600px;
+  /* display: flex; */
+}
+
+main > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 40px;
+}
+/* fine main */

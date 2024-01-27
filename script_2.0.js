@@ -20,3 +20,16 @@
 // typeWriter(text2, " Graphic Design //", 50);
 // typeWriter(text3, " About //", 50);
 // typeWriter(text4, " Contact //", 50);
+
+// sidenav logic
+const sidenav = document.querySelector(".sidenav")
+function openNav() {
+    sidenav.style.width = "300px"
+    setTimeout(function () {
+        document.querySelector(".closebtn").style.opacity = "1";
+    }, 300);
+}
+function closeNav() {
+    sidenav.style.width = "0"
+    document.querySelector(".closebtn").style.opacity = "0";
+}

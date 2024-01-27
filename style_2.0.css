@@ -1,32 +1,3 @@
-/* rebased for tailwind css */
-/* https://tailwindcss.com/ */
-
-/* portfolio examples */
-/* https://www.behance.net/gallery/136197687/Graphic-Designer */
-/* https://www.behance.net/gallery/135940249/Graphic-Design-Portfolio */
-/* https://www.behance.net/gallery/13497273/CV-Portfolio-Mailer */
-
-/* animated https://www.behance.net/gallery/149573517/Graphic-Design-Portfolio?tracking_source=search_projects_views&l=3 */
-/* futuristic dark https://www.behance.net/gallery/135940249/Graphic-Design-Portfolio */
-/* pink https://www.behance.net/gallery/146736515/Portfolio-Graphic-Designer */
-/* korpai https://danielkorpai.com/ */
-/* list  https://hackernoon.com/21-best-developer-portfolio-examples-p61j31wi */
-
-/* for header-test-2 remove later */
-@font-face {
-  font-family: "Silk Serif Regular";
-  src: url("resources/fonts/Silk Serif Regular.otf");
-}
-@font-face {
-  font-family: "Silk Serif ExtraLight";
-  src: url("resources/fonts/Silk Serif ExtraLight.otf");
-}
-@font-face {
-  font-family: "Toma Sans";
-  src: url("resources/fonts/TomaSans-Regular.otf");
-}
-/* fine for header-test-2 remove later */
-
 @font-face {
   font-family: "Century Gothic";
   src: url("resources/fonts/GOTHIC.TTF");
@@ -42,7 +13,20 @@
   --darkpurple: #262262;
   --blue: #2e3192;
   --black: #000;
-  --white: #fff;
+  --white: #f7f7f7;
+  --pink: #f3eeea;
+
+  --gradient-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
+  --gradient-shadow-white: 0 0 10px 4px rgba(255, 255, 255, 0.2),
+    0 0 20px 6px rgba(255, 255, 255, 0.1);
+  --gradient-shadow-bing: 0 0 10px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(0, 0, 0, 0.5);
+
+  /* alternative colors */
+  --alt-blue: #0661c5;
+  --alt-purple: #551a8b;
+  --alt-greyblue: #dae2f0;
+  --alt-darkblue: #0f182c;
 }
 
 /* boilerplate reset css */
@@ -50,17 +34,20 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: all ease 300ms;
 }
 
 body {
   font-family: "Century Gothic", sans-serif;
-  font-size: 1.1em;
+  font-size: 1.2em;
+  height: 100vh;
+  background: var(--lightgrey);
+  /* color: var(--darkpurple); */
   /* font-family: "Toma Sans", sans-serif; */
   /* display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center; */
-  height: 100vh;
   /* font-weight: 400; */
 }
 
@@ -77,21 +64,10 @@ h4 {
   font-family: "Century Gothic Bold", sans-serif;
   margin: none;
   padding: none;
+  line-height: 1.3em;
 }
 
 /* animations */
-/* @-webkit-keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(120px);
-    transform: translateY(120px);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
-    transform: translateY(0px);
-  }
-} */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -108,136 +84,209 @@ h4 {
 
 /* WEBSITE STYLE */
 
-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  height: 600px;
-  padding: 40px;
-}
-
-header .titolo {
-  font-size: xx-large;
-}
-
-.logo,
-.menu ul li {
+ul li {
   width: fit-content;
   margin-left: auto;
-  text-align: end;
+  /* text-align: end; */
   list-style-type: none;
 }
+
+p:not(:last-child) {
+  padding-bottom: 40px;
+}
+
+/* sidenav start */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--darkpurple);
+
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.sidenav a {
+  color: var(--lightgrey);
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #0661c5;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  opacity: 0;
+}
+
+.openbtn {
+  color: var(--blue);
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  font-size: 36px;
+  margin-left: 40px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+/* sidenav end */
+
 /* header-test-3 */
 header.header-test-3 {
+  font-size: x-large;
   background: var(--lightgrey);
+  padding: 40px 40px 0px 40px;
+  display: flex;
+  flex-direction: row;
 }
 header.header-test-3 * {
-  color: var(--blue);
+  color: var(--darkpurple);
 }
-header.header-test-3 h1,
-header.header-test-3 h2 {
-  /* center element */
-  /* position: absolute;
-  transform: translateY(-50%); */
+
+header.header-test-3::after {
+  /* triangolo alto destra */
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-bottom: 50px solid transparent;
+  border-right: 50px solid var(--darkpurple);
+}
+
+header .header-foto-contenitore {
+  /* width: 220px;
+  height: 220px; */
+  border-radius: 50%;
+  margin-right: 50px;
+  /* background: var(--alt-darkblue); */
+  position: relative;
+  top: 30px;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* overflow: hidden; */
+  /* object-fit: cover; */
+}
+
+header .header-foto-contenitore img {
+  border: 6px var(--alt-darkblue) solid;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  width: 138px;
+  height: 100%;
+}
+header .titolo {
 }
 
 hr.linea-doppia {
   /* transform: translateY(3px); */
-  border-top: 3px solid;
-  width: 33%;
+  margin-top: 10px;
+  border-top: 2px solid;
+  width: 25%;
 }
 hr.linea-singola {
+  margin-bottom: 20px;
   border-top: 1px solid;
   transform: translateY(-2px);
+  opacity: 0.6;
 }
 
 /* fine header-test-3 */
-/* header-test-1 */
-header.header-test-1 {
-  background: linear-gradient(40deg, #fff, #ffd0b2, #fa8998, #ca7fc8);
-}
-/* fine header-test-1 */
-
-/* header-test-2 */
-header.header-test-2 {
-  background: #161616;
-  color: #fff;
-}
-.header-test-2 .titolo {
-  /* text-align: center; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: xxx-large;
-}
-
-.header-test-2 .titolo h1 {
-  position: absolute;
-  z-index: 5;
-  transition: 300ms ease;
-  cursor: pointer;
-}
-
-.header-test-2 .titolo h1:hover {
-  transform: scale(1.05);
-}
-
-.circle-wrapper {
-  position: relative;
-  z-index: 0;
-  transition: filter 300ms ease;
-}
-
-.circle {
-  flex: 1;
-  display: inline-block;
-  width: 150px;
-  height: 300px;
-  border-radius: 0% 150px 150px 0%;
-  background: linear-gradient(
-    180deg,
-    #f2e6a3,
-    #65afa3,
-    #50758d,
-    #524077,
-    #4f3670
-  );
-  filter: blur(1px);
-  /* mask-image: url("resources/images/metal-texture-with-dust-scratches-cracks-textured-backgrounds-med.jpg");
-  mask-repeat: repeat;
-  mask-size: cover; */
-}
-.circle:nth-child(2) {
-  transform: rotate(180deg);
-  /* transform: scaleX(-1); */
-}
-
-.menu ul li {
-  /* font-size: 1.1em; */
-  filter: brightness(0.7);
-  transition: 300ms ease;
-  cursor: pointer;
-  margin-bottom: 0.3em;
-}
-.menu ul li:hover {
-  filter: brightness(1);
-}
-/* fine header-test-2 */
 
 /* main */
 main {
-  padding: 40px;
-  background: var(--darkpurple);
-  color: var(--white);
-  height: 600px;
-  /* display: flex; */
+  margin: 40px;
+  margin-left: 40px;
+  padding: 0px 40px 0px 40px;
+  /* background: var(--darkpurple); */
+  background: var(--lightgrey);
+  border-left: 1px solid var(--blue);
 }
 
-main > * {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 40px;
+main .categoria:not(:last-child) {
+  padding-bottom: 20px;
 }
+
+.hero-titolo {
+  cursor: pointer;
+  width: fit-content;
+  color: var(--lightgrey);
+  background: var(--darkpurple);
+  padding: 4px 16px 4px 16px;
+  margin: 40px 20px 10px 0;
+  box-shadow: -4px 4px 0px 0px #dae2f08c;
+  transform: skewX(-20deg);
+  position: relative;
+  top: -6px;
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.hero-titolo * {
+  transform: skewX(20deg);
+  text-transform: uppercase;
+  /* font-family: "Century Gothic"; */
+}
+
+.categoria::before {
+  content: "";
+  position: absolute;
+  /* top: 20px; */
+  left: 30px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: var(--blue);
+  /* transform: skewX(20deg); */
+}
+
+.hero-titolo:hover {
+  color: var(--darkpurple);
+  background-color: var(--lightgrey);
+  border: 2px solid var(--darkpurple);
+  box-shadow: -8px 8px 0px 0px var(--darkpurple);
+  /* transform: scale(1.2) skewX(-20deg) translate(10px, 0px); */
+}
+
+/* galleria immagini slanted */
+.galleria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+  /* transform: skew(-20deg); */
+  /* overflow: hidden;
+  display: inline-block;
+  width: 200px; */
+  /* height: auto; */
+}
+
+.galleria img {
+  width: 100%;
+  height: auto;
+  /* object-fit: cover; */
+  /* transform: skew(20deg); */
+
+  /* position: absolute; */
+}
+
 /* fine main */

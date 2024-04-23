@@ -305,10 +305,14 @@ hr.linea-singola {
 .stickynav {
   /* margin-top: 40px; */
   /* border: lawngreen 1px solid; */
-  /* background: var(--lightgrey); */
+  background: var(--white);
+  z-index: 1000;
   width: 100%;
-  padding: 20px 40px;
-  margin-left: 30px;
+  padding: 20px 40px 0px 70px;
+  /* margin-left: 30px; */
+  position: sticky;
+  top: 0px;
+  box-shadow: -4px 4px 12px 0px #7f78df6b;
   /* position: sticky !important; */
 }
 

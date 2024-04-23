@@ -35,6 +35,22 @@ document.addEventListener('scroll', () => {
     }
 })
 
+// temp scrollbar
+function getScrollPercent() {
+
+    const winHeight = window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.scrollY; // NaN or zero at the top
+    const trackLength = docHeight - winHeight;
+    const pctScrolled = Math.floor(scrollTop / trackLength * 100)
+    const loadingBarFill = document.querySelector(".loadingbar-fill")
+    loadingBarFill.style.width = pctScrolled + "%"
+    console.log(pctScrolled)
+}
+
+window.addEventListener("scroll", getScrollPercent)
+
+
 console.log(hero_titoli)
 // cose da fare: 23/04/2024
 // trova un modo per gestire l'array hero_titoli (i bottoni delle categorie) e identificare quando uno di questi viene superato con scroll

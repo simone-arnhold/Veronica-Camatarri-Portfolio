@@ -1,35 +1,41 @@
-// let text1 = document.getElementById("menu-item-1");
-// let text2 = document.getElementById("menu-item-2");
-// let text3 = document.getElementById("menu-item-3");
-// let text4 = document.getElementById("menu-item-4");
-
-
-// function typeWriter(element, text, speed) {
-//     let i = 0;
-//     function type() {
-//         if (i < text.length) {
-//             element.innerHTML += text.charAt(i);
-//             i++;
-//             setTimeout(type, speed);
-//         }
-//     }
-//     type();
-// }
-
-// typeWriter(text1, " Curriculum //", 50);
-// typeWriter(text2, " Graphic Design //", 50);
-// typeWriter(text3, " About //", 50);
-// typeWriter(text4, " Contact //", 50);
-
-// sidenav logic
+// sidenav logic OLD REMOVE
 const sidenav = document.querySelector(".sidenav")
+const closebtn = document.querySelector(".closebtn")
 function openNav() {
-    sidenav.style.width = "300px"
+    sidenav.classList.add("nav-open")
+    closebtn.classList.add("nav-open")
     setTimeout(function () {
-        document.querySelector(".closebtn").style.opacity = "1";
     }, 300);
 }
 function closeNav() {
-    sidenav.style.width = "0"
-    document.querySelector(".closebtn").style.opacity = "0";
+    sidenav.classList.remove("nav-open")
+    closebtn.classList.remove("nav-open")
 }
+
+// apri e chiudi categorie
+const hero_titoli = document.querySelectorAll(".hero-titolo")
+hero_titoli.forEach(titolo => {
+    titolo.addEventListener("click", () => {
+        var categoria_contenuto = titolo.nextElementSibling
+        // applica categoria-attiva a categoria-contenuto
+        categoria_contenuto.classList.toggle("nascosta")
+    })
+})
+
+// check if anchor tag has been scrolled over
+document.addEventListener('scroll', () => {
+
+    const anchorElement = document.getElementById("event_design")
+    const rect = anchorElement.getBoundingClientRect()
+
+    // Check if the anchor tag is visible in the viewport
+    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+        console.log('Anchor tag is visible!');
+        // Your custom logic here (e.g., update UI, trigger an action, etc.)
+    }
+})
+
+console.log(hero_titoli)
+// cose da fare: 23/04/2024
+// trova un modo per gestire l'array hero_titoli (i bottoni delle categorie) e identificare quando uno di questi viene superato con scroll
+// dopodichè gestisci la barra di progressione in base a quali anchor tag sono stati superati

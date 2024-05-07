@@ -14,7 +14,7 @@ let overlayImage = document.querySelector(".gallery-overlay-image")
 let overlayTitle = document.querySelector(".gallery-overlay-title")
 
 // close button logic
-let closeBtn = document.querySelector(".close-button")
+let closeButton = document.querySelector(".close-button")
 function closeOverlay() {
   galleryOverlay.style.visibility = "hidden"
 }
@@ -22,7 +22,7 @@ function closeOverlay() {
 
 galleryOverlay.addEventListener("click", closeOverlay) //todo reenable
 galleryOverlayOuterbox.addEventListener("click", (e) => { e.stopPropagation() })
-closeBtn.addEventListener("click", closeOverlay)
+closeButton.addEventListener("click", closeOverlay)
 
 function makeOverlayTitle(_imgURL) {
   console.log("_imgurl: ", _imgURL)

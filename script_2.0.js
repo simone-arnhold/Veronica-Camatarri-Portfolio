@@ -50,6 +50,9 @@ function getScrollPercent() {
 
 window.addEventListener("scroll", getScrollPercent)
 
+// gallery overlay logic
+
+
 
 console.log(hero_titoli)
 // cose da fare: 23/04/2024

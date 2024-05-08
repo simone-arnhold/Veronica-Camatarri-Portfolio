@@ -9,9 +9,9 @@ const gridItems = document.querySelectorAll(".grid-item")
 
 // setup gallery overlay
 const galleryOverlay = document.querySelector(".gallery-overlay")
-const galleryOverlayOuterbox = document.querySelector(".gallery-overlay-outerbox")
 let overlayImage = document.querySelector(".gallery-overlay-image")
 let overlayTitle = document.querySelector(".gallery-overlay-title")
+const galleryOverlayOuterbox = document.querySelector(".gallery-overlay-outerbox")
 
 // close button logic
 let closeButton = document.querySelector(".close-button")
@@ -19,24 +19,22 @@ function closeOverlay() {
   galleryOverlay.style.visibility = "hidden"
 }
 // necessary to stop clicks on the image from closing the overlay
-
-galleryOverlay.addEventListener("click", closeOverlay) //todo reenable
 galleryOverlayOuterbox.addEventListener("click", (e) => { e.stopPropagation() })
+galleryOverlay.addEventListener("click", closeOverlay)
 closeButton.addEventListener("click", closeOverlay)
 
-function makeOverlayTitle(_imgURL) {
-  console.log("_imgurl: ", _imgURL)
-  console.log(typeof (_imgURL))
-  let newOverlayTitle = _imgURL
-    .substring(_imgURL.toString().lastIndexOf("/") + 1, _imgURL.lastIndexOf("."))
-    .replaceAll("-", " ")
-    .replaceAll(/%20/g, " ")
-    .replaceAll("_", " ")
-  overlayImage.src = _imgURL
-  overlayTitle.innerHTML = `${newOverlayTitle}`
-
-  // console.log(typeof (_imgURL))
-}
+// function makeOverlayTitle(_imgURL) {
+//   console.log("_imgurl: ", _imgURL)
+//   console.log(typeof (_imgURL))
+//   let newOverlayTitle = _imgURL
+//     .substring(_imgURL.toString().lastIndexOf("/") + 1, _imgURL.lastIndexOf("."))
+//     .replaceAll("-", " ")
+//     .replaceAll(/%20/g, " ")
+//     .replaceAll("_", " ")
+//   overlayImage.src = _imgURL
+//   overlayTitle.innerHTML = `${newOverlayTitle}`
+//   console.log(typeof (_imgURL))
+// }
 
 gridItems.forEach((gridItem) => {
   gridItem.addEventListener("click", () => {
@@ -46,7 +44,7 @@ gridItems.forEach((gridItem) => {
     // console.log("imgurl: ", imgURL)
     overlayImage = document.querySelector(".gallery-overlay-image")
     overlayTitle = document.querySelector(".gallery-overlay-title")
-    makeOverlayTitle(imgURL)
+    // makeOverlayTitle(imgURL)
     galleryOverlay.style.visibility = "visible"
   })
 })
@@ -95,8 +93,8 @@ btnArray.forEach((elem) => {
     overlayImage.src = imagesArray[imgIndex]
     // console.log("new imgIndex: " + imgIndex)
 
-    console.log(overlayImage.src)
-    makeOverlayTitle(overlayImage)
+    // console.log(overlayImage.src)
+    // makeOverlayTitle(overlayImage)
   })
 })
 // })

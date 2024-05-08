@@ -29,10 +29,10 @@ document.addEventListener('scroll', () => {
     const rect = anchorElement.getBoundingClientRect()
 
     // Check if the anchor tag is visible in the viewport
-    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-        console.log('Anchor tag is visible!');
-        // Your custom logic here (e.g., update UI, trigger an action, etc.)
-    }
+    // if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+    // console.log('Anchor tag is visible!');
+    // Your custom logic here (e.g., update UI, trigger an action, etc.)
+    // }
 })
 
 // temp scrollbar
@@ -45,7 +45,7 @@ function getScrollPercent() {
     const pctScrolled = Math.floor(scrollTop / trackLength * 100)
     const loadingBarFill = document.querySelector(".loadingbar-fill")
     loadingBarFill.style.width = pctScrolled + "%"
-    console.log(pctScrolled)
+    // console.log(pctScrolled)
 }
 
 window.addEventListener("scroll", getScrollPercent)

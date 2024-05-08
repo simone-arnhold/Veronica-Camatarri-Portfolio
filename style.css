@@ -43,7 +43,7 @@
 
 body {
   font-family: "Century Gothic", sans-serif;
-  font-size: 1.3em;
+  font-size: 1.2em;
   height: 100vh;
   background: var(--lightgrey);
   /* color: var(--darkpurple); */
@@ -215,6 +215,7 @@ p:not(:last-child) {
   transition: 200ms ease-out;
   color: var(--blue);
   cursor: pointer;
+  text-shadow: 0px 0px 8px white;
 }
 
 .close-button:hover {
@@ -467,7 +468,7 @@ hr.linea-singola {
   background-color: var(--blue);
   height: 5px;
   border-radius: 5px;
-  width: 5%;
+  width: 0%;
   margin-top: -5px;
   position: relative;
   left: 16px;
@@ -486,6 +487,7 @@ hr.linea-singola {
   font-size: medium;
   text-decoration: none;
   text-transform: uppercase;
+  color: var(--darkpurple);
   /* text-align: center; */
   padding: 10px;
   /* border: 1px solid red; */
@@ -518,7 +520,7 @@ main {
 }
 
 main h3 {
-  color: var(--darkpurple);
+  color: var(--blue);
   margin: 20px 0 10px;
 }
 main h3:not(:first-of-type) {
@@ -606,7 +608,7 @@ main .categoria:not(:last-child) {
 }
 
 /* galleria immagini slanted */
-.galleria {
+/* .galleria {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 10px;
@@ -617,12 +619,28 @@ main .categoria:not(:last-child) {
   height: auto;
   border: 2px solid var(--lightgrey);
   cursor: pointer;
+} */
+
+/* temp grid span */
+.grid-span-wide {
+  grid-column: span 2;
+}
+.grid-span-tall {
+  grid-row: span 2;
+  /* grid-row-start: 1; */
+}
+.grid-span-2x {
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
 .square-gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 4px;
+  grid-template-columns: repeat(3, 1fr);
+  /* means 1fr 1fr 1fr */
+  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+  /* grid-gap: 4px; */
+  gap: 0.4rem;
   /* --images: 3;
   --width: 50vw;
   display: grid;
@@ -632,12 +650,27 @@ main .categoria:not(:last-child) {
 }
 
 .grid-item {
+  border-radius: 5px;
   position: relative;
   width: 100%;
   cursor: pointer;
   max-height: 500px;
 }
+
+.grid-item:hover {
+  transform: scale(1.03) perspective(900px) translateY(-5%) rotateX(3deg)
+    translateZ(0);
+  box-shadow: 0px 12px 12px #7f78df6b;
+  z-index: 5;
+}
+
+.grid-text {
+  border-radius: 5px;
+  padding: 5px;
+}
+
 .grid-image {
+  border-radius: 5px;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -645,29 +678,31 @@ main .categoria:not(:last-child) {
 }
 
 .overlay {
+  border-radius: 5px;
   font-family: "Century Gothic Bold", sans-serif;
-  font-size: 1.4em;
-  /* -webkit-text-stroke: 1px var(--darkpurple); */
-  text-shadow: -3px 3px var(--blue);
+  font-size: 1.3em;
+  /* -webkit-text-stroke: 2px var(--darkpurple); */
   padding: 20px;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* background-color: #262262ce; */
-  /* background-image: radial-gradient(circle, #262262ce); */
-  background-image: radial-gradient(circle, #48438f56, #49448fce);
+  /* background-image: radial-gradient(circle, #ffffff00, #7f78df2c); */
+  /* background-image: radial-gradient(circle, #48438f56, #49448fce); */
+  /* background-image: radial-gradient(circle, #bab7ec56, #8782ccce); */
   /* background: rgba(38, 34, 98, 0.7); */
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  /* backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px); */
   opacity: 0;
   transition: opacity 300ms ease-in-out;
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
-  color: var(--lightgrey);
+  color: white;
+  /* color: var(--blue); */
+  text-shadow: -3px 3px var(--blue);
 }
 
 .grid-item:hover .overlay {

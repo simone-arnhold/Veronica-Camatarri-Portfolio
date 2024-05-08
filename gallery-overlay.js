@@ -81,9 +81,11 @@ btnArray.forEach((elem) => {
     }
     //nextBtn
     if (e.target == nextBtn) {
-      +
-        imgIndex++
-      if (imgIndex >= imagesArray.length) {
+      imgIndex++
+      // bug: fails to show last image
+      console.log("index:", imgIndex)
+      console.log(imagesArray.length)
+      if (imgIndex >= imagesArray.length - 1) {
         imgIndex = 0
       }
     }

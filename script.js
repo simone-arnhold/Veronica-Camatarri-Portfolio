@@ -23,38 +23,47 @@ hero_titoli.forEach(titolo => {
 })
 
 // check if anchor tag has been scrolled over
-document.addEventListener('scroll', () => {
 
-    const anchorElement = document.getElementById("event_design")
-    const rect = anchorElement.getBoundingClientRect()
-
-    // Check if the anchor tag is visible in the viewport
-    // if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-    // console.log('Anchor tag is visible!');
-    // Your custom logic here (e.g., update UI, trigger an action, etc.)
-    // }
+document.addEventListener("scroll", () => {
+    const rectAbout = document.getElementById("about").getBoundingClientRect()
+    const rectEventDesign = document.getElementById("event-design").getBoundingClientRect()
+    const rectGraficaSocial = document.getElementById("grafica-social").getBoundingClientRect()
+    const rectImpaginazione = document.getElementById("impaginazione").getBoundingClientRect()
+    const rectLoghi = document.getElementById("loghi").getBoundingClientRect()
+    // const rectContatta = document.getElementById("contatta").getBoundingClientRect()
+    let loadingBarFill = document.querySelector(".loadingbar-fill")
+    if (rectAbout.top < window.innerHeight) {
+        loadingBarFill.style.width = "0%"
+    } if (rectEventDesign.top < window.innerHeight) {
+        loadingBarFill.style.width = "16.67%"
+    } if (rectGraficaSocial.top < window.innerHeight) {
+        loadingBarFill.style.width = "33.34%"
+    } if (rectImpaginazione.top < window.innerHeight) {
+        loadingBarFill.style.width = "50%"
+    } if (rectLoghi.top < window.innerHeight) {
+        loadingBarFill.style.width = "68%"
+    }
+    // if (rectContatta.top < window.innerHeight) {
+    //         loadingBarFill.style.width = "100%"
+    // })
 })
 
-// temp scrollbar
-function getScrollPercent() {
+// const arrayOfTitoli = document.querySelectorAll(".hero-titolo")
+// console.log(arrayOfTitoli)
+// const arrayOfRects = []
+// arrayOfTitoli.forEach(titolo => {
+//     arrayOfRects.push(titolo.getBoundingClientRect())
+//     return arrayOfRects
+// })
+// console.log("arrayofrects: ", arrayOfRects)
 
-    const winHeight = window.innerHeight;
-    const docHeight = document.documentElement.scrollHeight;
-    const scrollTop = window.scrollY; // NaN or zero at the top
-    const trackLength = docHeight - winHeight;
-    const pctScrolled = Math.floor(scrollTop / trackLength * 100)
-    const loadingBarFill = document.querySelector(".loadingbar-fill")
-    loadingBarFill.style.width = pctScrolled + "%"
-    // console.log(pctScrolled)
-}
-
-window.addEventListener("scroll", getScrollPercent)
-
-// gallery overlay logic
-
-
-
-console.log(hero_titoli)
-// cose da fare: 23/04/2024
-// trova un modo per gestire l'array hero_titoli (i bottoni delle categorie) e identificare quando uno di questi viene superato con scroll
-// dopodichè gestisci la barra di progressione in base a quali anchor tag sono stati superati
+// document.addEventListener('scroll', () => {
+//     arrayOfRects.forEach(rect => {
+//         if (rect.top < window.innerHeight) {
+//             loadingfill = 100 / (arrayOfRects.length * arrayOfRects.indexOf(rect) + 1)
+//                 + "%"
+//             loadingBarFill.style.width = loadingfill
+//             console.log(loadingfill)
+//         }
+//     })
+// })

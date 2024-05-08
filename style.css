@@ -541,8 +541,8 @@ main .categoria:not(:last-child) {
 }
 
 .categoria-contenuto.nascosta {
-  opacity: 0;
   height: 0;
+  opacity: 0;
   overflow: hidden;
 }
 

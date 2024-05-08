@@ -23,18 +23,16 @@ galleryOverlayOuterbox.addEventListener("click", (e) => { e.stopPropagation() })
 galleryOverlay.addEventListener("click", closeOverlay)
 closeButton.addEventListener("click", closeOverlay)
 
-// function makeOverlayTitle(_imgURL) {
-//   console.log("_imgurl: ", _imgURL)
-//   console.log(typeof (_imgURL))
-//   let newOverlayTitle = _imgURL
-//     .substring(_imgURL.toString().lastIndexOf("/") + 1, _imgURL.lastIndexOf("."))
-//     .replaceAll("-", " ")
-//     .replaceAll(/%20/g, " ")
-//     .replaceAll("_", " ")
-//   overlayImage.src = _imgURL
-//   overlayTitle.innerHTML = `${newOverlayTitle}`
-//   console.log(typeof (_imgURL))
-// }
+function makeOverlayTitle(_imgURL) {
+  // console.log("_imgurl: ", _imgURL)
+  // let newOverlayTitle = _imgURL
+  //   .substring(_imgURL.toString().lastIndexOf("/") + 1, _imgURL.lastIndexOf("."))
+  //   .replaceAll("-", " ")
+  //   .replaceAll(/%20/g, " ")
+  //   .replaceAll("_", " ")
+  overlayImage.src = _imgURL
+  // overlayTitle.innerHTML = `${newOverlayTitle}`
+}
 
 gridItems.forEach((gridItem) => {
   gridItem.addEventListener("click", () => {
@@ -43,8 +41,8 @@ gridItems.forEach((gridItem) => {
     let imgURL = gridItem.querySelector("img").src
     // console.log("imgurl: ", imgURL)
     overlayImage = document.querySelector(".gallery-overlay-image")
-    overlayTitle = document.querySelector(".gallery-overlay-title")
-    // makeOverlayTitle(imgURL)
+    // overlayTitle = document.querySelector(".gallery-overlay-title")
+    makeOverlayTitle(imgURL)
     galleryOverlay.style.visibility = "visible"
   })
 })

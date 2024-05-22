@@ -30,6 +30,7 @@ document.addEventListener("scroll", () => {
     const rectGraficaSocial = document.getElementById("grafica-social").getBoundingClientRect()
     const rectImpaginazione = document.getElementById("impaginazione").getBoundingClientRect()
     const rectLoghi = document.getElementById("loghi").getBoundingClientRect()
+    const rectContatta = document.getElementById("contatta").getBoundingClientRect()
     // const rectContatta = document.getElementById("contatta").getBoundingClientRect()
     let loadingBarFill = document.querySelector(".loadingbar-fill")
     if (rectAbout.top < window.innerHeight) {
@@ -42,11 +43,21 @@ document.addEventListener("scroll", () => {
         loadingBarFill.style.width = "50%"
     } if (rectLoghi.top < window.innerHeight) {
         loadingBarFill.style.width = "68%"
+    } if (rectContatta.top < window.innerHeight) {
+        loadingBarFill.style.width = "84%"
     }
-    // if (rectContatta.top < window.innerHeight) {
-    //         loadingBarFill.style.width = "100%"
-    // })
 })
+
+// set background when hovering over Invia button
+// submitBtn = document.querySelector("#submit-btn")
+// pageWrapper = document.querySelector(".wrapper")
+
+// submitBtn.addEventListener("mouseover", () => {
+//     console.log("hover")
+//     pageWrapper.style.backgroundColor = "purple"
+// })
+
+
 
 // const arrayOfTitoli = document.querySelectorAll(".hero-titolo")
 // console.log(arrayOfTitoli)

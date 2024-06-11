@@ -106,7 +106,7 @@ ul li {
 }
 
 p:not(:last-child) {
-  padding-bottom: 40px;
+  /* padding-bottom: 40px; */
 }
 /* p:last-child {
   padding-bottom: 40px !important;
@@ -583,16 +583,18 @@ main {
 
 main h3 {
   color: var(--blue);
-  /* margin: 20px 0 10px; */
-  margin: 20px 0 20px;
+  margin: 20px 0 0px 0;
 }
+
 main h3:not(:first-of-type) {
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 
 main p {
-  padding-bottom: 20px !important;
-  padding-left: 10px;
+  padding: 10px 0px 10px 0px;
+  /* margin: 0; */
+  /* padding-bottom: 20px !important;
+  padding-left: 10px; */
   color: var(--darkgrey);
   /* font-size: 1.1em; */
 }

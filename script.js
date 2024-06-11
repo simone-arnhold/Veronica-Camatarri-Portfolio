@@ -40,7 +40,7 @@ document.addEventListener("scroll", () => {
     } if (rectGraficaSocial.top < window.innerHeight) {
         loadingBarFill.style.width = "33.34%"
     } if (rectImpaginazione.top < window.innerHeight) {
-        loadingBarFill.style.width = "50%"
+        loadingBarFill.style.width = "49%"
     } if (rectLoghi.top < window.innerHeight) {
         loadingBarFill.style.width = "68%"
     } if (rectContatta.top < window.innerHeight) {

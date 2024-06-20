@@ -1,16 +1,7 @@
-// sidenav logic OLD REMOVE
-const sidenav = document.querySelector(".sidenav")
-const closebtn = document.querySelector(".closebtn")
-function openNav() {
-    sidenav.classList.add("nav-open")
-    closebtn.classList.add("nav-open")
-    setTimeout(function () {
-    }, 300);
-}
-function closeNav() {
-    sidenav.classList.remove("nav-open")
-    closebtn.classList.remove("nav-open")
-}
+// loading section
+window.addEventListener('load', function () {
+    document.getElementById('loading').classList.toggle("nascosta")
+})
 
 // apri e chiudi categorie
 const hero_titoli = document.querySelectorAll(".hero-titolo")
@@ -102,3 +93,17 @@ document.addEventListener("scroll", () => {
 //         }
 //     })
 // })
+
+// sidenav logic OLD REMOVE
+// const sidenav = document.querySelector(".sidenav")
+// const closebtn = document.querySelector(".closebtn")
+// function openNav() {
+//     sidenav.classList.add("nav-open")
+//     closebtn.classList.add("nav-open")
+//     setTimeout(function () {
+//     }, 300);
+// }
+// function closeNav() {
+//     sidenav.classList.remove("nav-open")
+//     closebtn.classList.remove("nav-open")
+// }

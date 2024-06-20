@@ -77,6 +77,28 @@ p {
   line-height: 1.5em;
 }
 
+b {
+  /* background-color: red;
+  padding: 10px; */
+  /* color: var(--lightgrey); */
+  font-weight: 400;
+  /* background: linear-gradient(to bottom, transparent 50%, var(--blue) 50%); */
+  /* background: linear-gradient(120deg, #2e319233 0%, #541a8b46 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 40%;
+  background-position: 0 90%; */
+  background: linear-gradient(120deg, #7f78df3a 0%, #7f78df3a 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 40%;
+  background-position: 0 90%;
+}
+
+::selection {
+  background: #7f78dfad;
+  /* background-color: var(--blue); */
+  color: var(--lightgrey);
+}
+
 a {
   text-decoration: none;
 }
@@ -390,26 +412,6 @@ button:hover {
   opacity: 1;
 }
 
-/* 
-.openbtn-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid var(--darkpurple);
-  margin: 20px;
-  background-color: var(--darkpurple);
-}
-.openbtn-container:hover {
-  color: var(--darkpurple);
-  background-color: var(--lightgrey);
-  border: 2px solid var(--darkpurple);
-  box-shadow: -8px 8px 0px 0px var(--darkpurple);
-} */
-/* 
-.openbtn:hover {
-  color: var(--alt-blue);
-} */
-
 @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;
@@ -498,7 +500,7 @@ hr.linea-singola {
 }
 
 .stickynav-logo {
-  width: 50px !important;
+  width: 50px;
   position: absolute;
   top: 8px;
   left: 15px;
@@ -510,6 +512,7 @@ hr.linea-singola {
 
 .main-bar {
   padding-left: 80px;
+  /* width: 100vw; */
 }
 
 .loadingbar {
@@ -864,3 +867,60 @@ div.container:hover {
 div.container:hover label {
   color: var(--lightgrey);
 } */
+
+/* mobile start */
+@media screen and (max-width: 1024px) {
+  body {
+    overflow-x: hidden;
+  }
+  header.top-header {
+    /* padding: 30px 10px; */
+  }
+
+  header.top-header h1 {
+    font-size: 2em;
+  }
+  header.top-header h2 {
+    font-size: 1.2em;
+  }
+  .stickynav {
+    padding: 4px;
+  }
+
+  .stickynav #a-page-top {
+    /* width: 33px;
+    height: 33px;
+    object-fit: contain; */
+  }
+  .stickynav-logo {
+    width: 20px;
+    top: 11px;
+    left: 2px;
+    /* width: 100%; */
+  }
+  .main-bar {
+    padding-left: 16px;
+    /* transform: scale(0.5); */
+    /* width: 30vw; */
+  }
+  .stickynav-menu a {
+    font-size: 0.5em;
+    padding: 4px;
+    /* border: 1px red solid; */
+    /* transform: rotate(45deg); */
+  }
+  .stickynav-menu a::before {
+    width: 15px;
+    height: 15px;
+  }
+  .loadingbar {
+    left: 12px;
+    top: 14px;
+  }
+  .loadingbar-fill {
+    left: 12px;
+    top: 14px;
+  }
+}
+
+/* mobile end */

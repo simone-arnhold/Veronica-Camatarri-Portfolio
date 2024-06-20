@@ -920,6 +920,7 @@ div.container:hover label {
 /* mobile start */
 @media screen and (max-width: 1024px) {
   body {
+    width: 100% !important;
     overflow-x: hidden;
   }
   header.top-header {
@@ -953,7 +954,7 @@ div.container:hover label {
     /* width: 30vw; */
   }
   .stickynav-menu a {
-    font-size: 0.5em;
+    font-size: 0.4em;
     padding: 4px;
     /* border: 1px red solid; */
     /* transform: rotate(45deg); */

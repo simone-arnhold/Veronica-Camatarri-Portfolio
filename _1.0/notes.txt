@@ -1,6 +1,0 @@
-TODO:
--title inside gallery item on hover
--gallery
--responsive menu on <900px
--about page
--contact page

@@ -33,19 +33,43 @@ document.addEventListener("scroll", () => {
     const rectContatta = document.getElementById("contatta").getBoundingClientRect()
     // const rectContatta = document.getElementById("contatta").getBoundingClientRect()
     let loadingBarFill = document.querySelector(".loadingbar-fill")
-    if (rectAbout.top < window.innerHeight) {
-        loadingBarFill.style.width = "0%"
-    } if (rectEventDesign.top < window.innerHeight) {
-        loadingBarFill.style.width = "16.67%"
-    } if (rectGraficaSocial.top < window.innerHeight) {
-        loadingBarFill.style.width = "33.34%"
-    } if (rectImpaginazione.top < window.innerHeight) {
-        loadingBarFill.style.width = "49%"
-    } if (rectLoghi.top < window.innerHeight) {
-        loadingBarFill.style.width = "68%"
-    } if (rectContatta.top < window.innerHeight) {
-        loadingBarFill.style.width = "84%"
+
+
+    if (window.matchMedia("(min-width: 1025px)").matches) {
+        // desktop
+        if (rectAbout.top < window.innerHeight) {
+            loadingBarFill.style.width = "0%"
+        } if (rectEventDesign.top < window.innerHeight) {
+            loadingBarFill.style.width = "16.67%"
+        } if (rectGraficaSocial.top < window.innerHeight) {
+            loadingBarFill.style.width = "33.34%"
+        } if (rectImpaginazione.top < window.innerHeight) {
+            loadingBarFill.style.width = "50%"
+        } if (rectLoghi.top < window.innerHeight) {
+            loadingBarFill.style.width = "68%"
+        } if (rectContatta.top < window.innerHeight) {
+            loadingBarFill.style.width = "84%"
+        }
+    } else {
+        // mobile
+        if (rectAbout.top < window.innerHeight) {
+            loadingBarFill.style.width = "0%"
+        } if (rectEventDesign.top < window.innerHeight) {
+            loadingBarFill.style.width = "15%"
+        } if (rectGraficaSocial.top < window.innerHeight) {
+            loadingBarFill.style.width = "30%"
+        } if (rectImpaginazione.top < window.innerHeight) {
+            loadingBarFill.style.width = "45%"
+        } if (rectLoghi.top < window.innerHeight) {
+            loadingBarFill.style.width = "70%"
+        } if (rectContatta.top < window.innerHeight) {
+            loadingBarFill.style.width = "84%"
+        }
+
+
     }
+
+
 })
 
 // set background when hovering over Invia button

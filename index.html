@@ -543,7 +543,7 @@ list https://hackernoon.com/21-best-developer-portfolio-examples-p61j31wi -->
                                 <img src="resources/Veronica Portfolio/Impaginazione Brochure-Volantini -Flyer/IMG_20240303_162846.jpg"
                                     alt="" style="width: 100%">
                             </div>
-                            <form>
+                            <form action="formmail.php" method="POST">
                                 <label for="fname">Nome</label>
                                 <input type="text" id="fname" name="firstname" placeholder="Il tuo nome.."
                                     aria-labelledby="fname">
@@ -561,6 +561,8 @@ list https://hackernoon.com/21-best-developer-portfolio-examples-p61j31wi -->
                                 <textarea id="message" name="message" placeholder="Il tuo messaggio.." rows="4"
                                     required></textarea>
 
+
+                                <input name="recipient" type="hidden" value="veronica_mail">
                                 <div id="submit-btn-container">
                                     <button type="submit" id="submit-btn">Invia</button>
                                 </div>

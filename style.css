@@ -859,6 +859,39 @@ main .categoria:not(:last-child) {
 /* fine footer */
 
 /* contatta */
+
+.container-smallcontact {
+  display: flex;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-gap: 20px; */
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  background-image: url("resources/Veronica Portfolio/website_media/veronica logo purple.svg");
+  background-repeat: no-repeat;
+  /* background-position: right; */
+  object-fit: unset;
+  background-position-x: -150%;
+  background-position-y: 50%;
+  background-size: 120%;
+}
+
+.im-smallcontact {
+  width: 20%;
+}
+
+.contenuto2 {
+  display: flex;
+  flex: 2;
+  padding-left: 50px;
+  align-items: center;
+  /* display: flex;
+  flex-direction: column; 
+  width: auto;
+  justify-content: center; */
+}
+
 .im img {
   border-radius: 5px;
   box-shadow: var(--gradient-shadow-blue);
@@ -923,6 +956,12 @@ div.container:hover label {
     width: 100% !important;
     overflow-x: hidden;
   }
+
+  main {
+    margin: 20px 20px 0px 20px;
+    padding-left: 20px;
+  }
+
   header.top-header {
     /* padding: 30px 10px; */
   }
@@ -972,6 +1011,10 @@ div.container:hover label {
     top: 14px;
   }
 
+  .categoria::before {
+    left: 10px;
+  }
+
   .square-gallery {
     /* grid-template-columns: repeat(2, 1fr); */
     gap: 0.2em;
@@ -982,8 +1025,22 @@ div.container:hover label {
     margin: -20px;
   }
 
-  .container {
+  .container-smallcontact {
+    display: grid;
     grid-template-columns: 1fr;
+  }
+
+  .container-smallcontact {
+    background-image: none;
+  }
+
+  .im-smallcontact {
+    width: 100%;
+  }
+
+  .contenuto2 {
+    display: block;
+    padding: 0;
   }
 }
 

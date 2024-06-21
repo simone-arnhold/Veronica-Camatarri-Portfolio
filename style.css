@@ -170,7 +170,7 @@ ul li {
 }
 
 li::marker {
-  background-color: var(--blue);
+  color: var(--blue) !important;
 }
 
 p:not(:last-child) {
@@ -632,7 +632,7 @@ main {
 
 main h3 {
   color: var(--blue);
-  margin: 16px 0 16px 0;
+  margin: 20px 0 0px 0;
 }
 
 main h3:not(:first-of-type) {

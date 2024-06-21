@@ -1,4 +1,4 @@
-// loading section
+// loading section TODO fix
 window.addEventListener('load', function () {
     document.getElementById('loading').classList.toggle("nascosta")
 })
@@ -56,12 +56,9 @@ document.addEventListener("scroll", () => {
         } if (rectContatta.top < window.innerHeight) {
             loadingBarFill.style.width = "84%"
         }
-
-
     }
-
-
 })
+
 
 // set background when hovering over Invia button
 // submitBtn = document.querySelector("#submit-btn")

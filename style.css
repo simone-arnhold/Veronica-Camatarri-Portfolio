@@ -18,7 +18,7 @@
   --pink: #f3eeea;
   /* --darkgrey: #5c5c5d; */
 
-  --color2: #800020;
+  --color2: #ce1f00;
   --color3: #570885;
   --color4: #820865;
 
@@ -938,6 +938,15 @@ button#submit-btn {
   pointer-events: auto;
 }
 
+button.contact-btn {
+  background-color: var(--color3);
+}
+button.contact-btn:hover {
+  background-color: white;
+  color: var(--color3);
+  border-color: var(--color3);
+  box-shadow: -8px 8px 0px 0px var(--color3);
+}
 /* div.container {
   pointer-events: none;
 }

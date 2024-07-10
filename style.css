@@ -81,12 +81,12 @@ b {
   /* background-color: red;
   padding: 10px; */
   /* color: var(--lightgrey); */
-  font-weight: 400;
   /* background: linear-gradient(to bottom, transparent 50%, var(--blue) 50%); */
   /* background: linear-gradient(120deg, #2e319233 0%, #541a8b46 100%);
   background-repeat: no-repeat;
   background-size: 100% 40%;
   background-position: 0 90%; */
+  font-weight: 400;
   background: linear-gradient(120deg, #7f78df3a 0%, #7f78df3a 100%);
   background-repeat: no-repeat;
   background-size: 100% 40%;
@@ -151,8 +151,8 @@ a {
     /* display: none; */
   }
 }
-#loading.nascosta {
-}
+/* #loading.nascosta {
+} */
 
 #loading-image {
   /* position: absolute; */
@@ -475,7 +475,7 @@ header.top-header {
   padding: 40px 40px 40px 40px;
   display: flex;
   flex-direction: row;
-  background-image: url("resources/Veronica Portfolio/website_media/creativita-dark.png");
+  background-image: url("resources/Veronica Portfolio/website_media/creativita-dark-reduced.jpg");
   /* background-image: url("resources/test-hero-2x.jpeg"); */
   background-repeat: no-repeat;
   background-size: cover;
@@ -655,10 +655,25 @@ main .categoria:not(:last-child) {
   transition: all 200ms ease-out;
 }
 
-.categoria-contenuto.nascosta {
+.nascosta {
   height: 0;
   opacity: 0;
   overflow: hidden;
+}
+
+/* about special case */
+#about-container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#about-img-container {
+  padding: 60px 20px;
+}
+
+#about-img-container img {
+  max-width: 300px;
+  margin-left: auto;
 }
 
 .hero-titolo,
@@ -720,13 +735,12 @@ main .categoria:not(:last-child) {
   box-shadow: -8px 8px 0px 0px var(--blue);
 }
 
-/* temp grid span */
+/* grid span for different elements*/
 .grid-span-wide {
   grid-column: span 2;
 }
 .grid-span-tall {
   grid-row: span 2;
-  /* grid-row-start: 1; */
 }
 .grid-span-2x {
   grid-column: span 2;
@@ -838,6 +852,22 @@ main .categoria:not(:last-child) {
   transform: scale(1.1);
 }
 
+@keyframes loopColor {
+  0% {
+    color: #fff;
+  }
+  50% {
+    color: #fff;
+  }
+  100% {
+    color: #dfbdf3;
+  }
+}
+.social-icons .fa-envelope {
+  animation: loopColor 3s infinite alternate;
+  color: #dfbdf3;
+}
+
 .social-icons li {
   display: inline;
 }
@@ -878,7 +908,7 @@ main .categoria:not(:last-child) {
 }
 
 .im-smallcontact {
-  width: 20%;
+  width: 25%;
 }
 
 .contenuto2 {
@@ -892,7 +922,9 @@ main .categoria:not(:last-child) {
   justify-content: center; */
 }
 
-.im img {
+.im img,
+.im-smallcontact img,
+#about-img-container img {
   border-radius: 5px;
   box-shadow: var(--gradient-shadow-blue);
 }
@@ -947,17 +979,6 @@ button.contact-btn:hover {
   border-color: var(--color3);
   box-shadow: -8px 8px 0px 0px var(--color3);
 }
-/* div.container {
-  pointer-events: none;
-}
-div.container:hover {
-  background-color: var(--blue);
-  color: var(--lightgrey);
-  box-shadow: var(--gradient-shadow-blue);
-}
-div.container:hover label {
-  color: var(--lightgrey);
-} */
 
 /* mobile start */
 @media screen and (max-width: 1024px) {
@@ -981,8 +1002,45 @@ div.container:hover label {
   header.top-header h2 {
     font-size: 1.2em;
   }
+
+  h4 {
+    font-size: 1.1rem;
+  }
+
+  button {
+    font-size: 1.3rem;
+  }
+  button#link-button {
+    font-size: 1rem !important;
+  }
+
+  .overlay,
+  .overlay:hover {
+    display: none;
+  }
+  .grid-item:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  #about-container {
+    display: block;
+    width: 100%;
+  }
+
+  .grid-span-wide,
+  .grid-span-tall,
+  .grid-span-2x {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
   .stickynav {
     padding: 4px;
+  }
+
+  #about-img-container {
+    padding: 0 20px;
   }
 
   .stickynav #a-page-top {
@@ -1025,15 +1083,20 @@ div.container:hover label {
   }
 
   .square-gallery {
-    /* grid-template-columns: repeat(2, 1fr); */
-    gap: 0.2em;
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 0;
+    row-gap: 0.3em;
+    margin: 0;
   }
 
   .gallery-overlay-nav {
     opacity: 1;
     margin: -20px;
   }
-
+  .gallery-overlay-image {
+    max-width: 95vw;
+  }
   .container-smallcontact {
     display: grid;
     grid-template-columns: 1fr;

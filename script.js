@@ -1,7 +1,7 @@
 // loading section TODO fix
-window.addEventListener('load', function () {
-    document.getElementById('loading').classList.toggle("nascosta")
-})
+// window.addEventListener('load', function () {
+//     document.getElementById('loading').classList.toggle("nascosta")
+// })
 
 // apri e chiudi categorie
 const hero_titoli = document.querySelectorAll(".hero-titolo")

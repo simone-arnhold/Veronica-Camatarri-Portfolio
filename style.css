@@ -619,12 +619,14 @@ hr.linea-singola {
 /* fine stickynav */
 
 /* main */
+
 main {
   margin: 40px 40px 0px 40px;
   padding: 0px 0px 20px 40px;
   /* background: var(--darkpurple); */
   background: var(--lightgrey);
   border-left: 1px solid var(--blue);
+  /* border-left: 1px solid linear-gradient(blue, red); */
   /* width: 100%; */
 }
 
@@ -645,8 +647,22 @@ main .categoria:not(:last-child) {
   padding-bottom: 20px;
 }
 
+/* load categoria when in viewport */
+.hidden-on-load {
+  opacity: 0;
+  transform: translateX(-15px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.onviewport {
+  opacity: 1;
+  transform: translateX(0px);
+}
+/* load categoria when in viewport end*/
+
 .categoria-contenuto {
   transition: all 200ms ease-out;
+  transition-delay: 600ms;
 }
 
 .nascosta {
@@ -668,6 +684,10 @@ main .categoria:not(:last-child) {
 #about-img-container img {
   max-width: 100%;
   margin-left: auto;
+}
+
+.hero-titolo {
+  transition-delay: 300ms;
 }
 
 .hero-titolo,
@@ -711,6 +731,7 @@ main .categoria:not(:last-child) {
   height: 20px;
   border-radius: 10px;
   background: var(--blue);
+  box-shadow: -0px 0px 10px 0px #6761c5;
   /* transform: skewX(20deg); */
 }
 

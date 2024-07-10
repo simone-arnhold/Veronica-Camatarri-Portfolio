@@ -1,12 +1,7 @@
-// loading section TODO fix
-// window.addEventListener('load', function () {
-//     document.getElementById('loading').classList.toggle("nascosta")
-// })
-
 document.addEventListener("DOMContentLoaded", function () {
     const loadingOverlay = document.getElementById("loading-overlay")
     loadingOverlay.classList.add("loaded")
-    console.log("Page loaded.")
+    // console.log("Page loaded.")
 })
 
 // apri e chiudi categorie
@@ -20,7 +15,6 @@ hero_titoli.forEach(titolo => {
 })
 
 // check if anchor tag has been scrolled over
-
 document.addEventListener("scroll", () => {
     const rectAbout = document.getElementById("about").getBoundingClientRect()
     const rectEventDesign = document.getElementById("event-design").getBoundingClientRect()
@@ -65,48 +59,22 @@ document.addEventListener("scroll", () => {
     }
 })
 
+// animate objects in when in the viewport
+const options = {
+    // root: document.querySelector('.wrap'),
+    rootMargin: '0px',
+    threshold: 0,
+}
+const observedElements = document.querySelectorAll('.hidden-on-load');
+console.log(observedElements)
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('onviewport');
+        }
+    })
+}, options)
 
-// set background when hovering over Invia button
-// submitBtn = document.querySelector("#submit-btn")
-// pageWrapper = document.querySelector(".wrapper")
-
-// submitBtn.addEventListener("mouseover", () => {
-//     console.log("hover")
-//     pageWrapper.style.backgroundColor = "purple"
-// })
-
-
-
-// const arrayOfTitoli = document.querySelectorAll(".hero-titolo")
-// console.log(arrayOfTitoli)
-// const arrayOfRects = []
-// arrayOfTitoli.forEach(titolo => {
-//     arrayOfRects.push(titolo.getBoundingClientRect())
-//     return arrayOfRects
-// })
-// console.log("arrayofrects: ", arrayOfRects)
-
-// document.addEventListener('scroll', () => {
-//     arrayOfRects.forEach(rect => {
-//         if (rect.top < window.innerHeight) {
-//             loadingfill = 100 / (arrayOfRects.length * arrayOfRects.indexOf(rect) + 1)
-//                 + "%"
-//             loadingBarFill.style.width = loadingfill
-//             console.log(loadingfill)
-//         }
-//     })
-// })
-
-// sidenav logic OLD REMOVE
-// const sidenav = document.querySelector(".sidenav")
-// const closebtn = document.querySelector(".closebtn")
-// function openNav() {
-//     sidenav.classList.add("nav-open")
-//     closebtn.classList.add("nav-open")
-//     setTimeout(function () {
-//     }, 300);
-// }
-// function closeNav() {
-//     sidenav.classList.remove("nav-open")
-//     closebtn.classList.remove("nav-open")
-// }
+observedElements.forEach(observedElement => {
+    observer.observe(observedElement)
+})

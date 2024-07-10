@@ -1014,8 +1014,15 @@ button.contact-btn:hover {
   }
 
   #about-container {
-    display: block;
+    /* display: block; */
+    flex-direction: column;
     width: 100%;
+  }
+  #about-img-container {
+    padding: 0px;
+  }
+  #about-img-container img {
+    max-width: 100%;
   }
 
   .grid-span-wide,
@@ -1027,10 +1034,6 @@ button.contact-btn:hover {
 
   .stickynav {
     padding: 4px;
-  }
-
-  #about-img-container {
-    padding: 0 20px;
   }
 
   .stickynav-logo {
@@ -1085,6 +1088,7 @@ button.contact-btn:hover {
   .container-smallcontact {
     display: grid;
     grid-template-columns: 1fr;
+    margin: -10px;
   }
 
   .container-smallcontact {

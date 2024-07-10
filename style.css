@@ -666,7 +666,7 @@ main .categoria:not(:last-child) {
 }
 
 #about-img-container img {
-  max-width: 300px;
+  max-width: 100%;
   margin-left: auto;
 }
 

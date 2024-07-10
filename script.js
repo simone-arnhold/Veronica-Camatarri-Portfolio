@@ -3,6 +3,12 @@
 //     document.getElementById('loading').classList.toggle("nascosta")
 // })
 
+document.addEventListener("DOMContentLoaded", function () {
+    const loadingOverlay = document.getElementById("loading-overlay")
+    loadingOverlay.classList.add("loaded")
+    console.log("Page loaded.")
+})
+
 // apri e chiudi categorie
 const hero_titoli = document.querySelectorAll(".hero-titolo")
 hero_titoli.forEach(titolo => {

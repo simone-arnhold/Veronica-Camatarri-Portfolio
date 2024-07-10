@@ -120,7 +120,7 @@ a {
 
 /* WEBSITE STYLE */
 
-#loading {
+#loading-overlay {
   position: fixed;
   display: block;
   width: 100%;
@@ -134,27 +134,32 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* animation-name: disappear;
-  animation-duration: 1000ms;
-  animation-iteration-count: 1; */
 }
 
 @keyframes disappear {
   0% {
     opacity: 1;
+    z-index: 100;
   }
-  50% {
+  99% {
     opacity: 0;
-  }
-  100% {
-    /* opacity: 0; */
     /* display: none; */
   }
+  100% {
+    opacity: 0;
+    /* display: none; */
+    z-index: -1;
+  }
 }
-/* #loading.nascosta {
-} */
+#loading-overlay.loaded {
+  animation-name: disappear;
+  animation-duration: 600ms;
+  animation-fill-mode: forwards;
+  /* animation-iteration-count: 1; */
+  /* display: none; */
+}
 
-#loading-image {
+#loading-overlay-image {
   /* position: absolute; */
   width: 100px;
   /* top: 100px;
@@ -172,13 +177,6 @@ ul li {
 li::marker {
   color: var(--blue) !important;
 }
-
-p:not(:last-child) {
-  /* padding-bottom: 40px; */
-}
-/* p:last-child {
-  padding-bottom: 40px !important;
-} */
 
 /* gallery overlay start */
 .gallery-overlay {
@@ -635,10 +633,6 @@ main h3 {
   margin: 20px 0 0px 0;
 }
 
-main h3:not(:first-of-type) {
-  /* margin-top: 50px; */
-}
-
 main p {
   color: var(--darkgrey);
 }
@@ -992,10 +986,6 @@ button.contact-btn:hover {
     padding-left: 20px;
   }
 
-  header.top-header {
-    /* padding: 30px 10px; */
-  }
-
   header.top-header h1 {
     font-size: 2em;
   }
@@ -1043,11 +1033,6 @@ button.contact-btn:hover {
     padding: 0 20px;
   }
 
-  .stickynav #a-page-top {
-    /* width: 33px;
-    height: 33px;
-    object-fit: contain; */
-  }
   .stickynav-logo {
     width: 20px;
     top: 11px;

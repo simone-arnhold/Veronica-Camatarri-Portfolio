@@ -993,6 +993,10 @@ button.contact-btn:hover {
     font-size: 1.2em;
   }
 
+  header .titolo {
+    padding: 0;
+  }
+
   h4 {
     font-size: 1.1rem;
   }

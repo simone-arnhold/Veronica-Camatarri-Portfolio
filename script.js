@@ -18,9 +18,9 @@ hero_titoli.forEach(titolo => {
 document.addEventListener("scroll", () => {
     const rectAbout = document.getElementById("about").getBoundingClientRect()
     const rectEventDesign = document.getElementById("event-design").getBoundingClientRect()
-    const rectGraficaSocial = document.getElementById("grafica-social").getBoundingClientRect()
-    const rectImpaginazione = document.getElementById("impaginazione").getBoundingClientRect()
-    const rectLoghi = document.getElementById("loghi").getBoundingClientRect()
+    const rectGraficaSocial = document.getElementById("social-media").getBoundingClientRect()
+    const rectStampe = document.getElementById("stampe").getBoundingClientRect()
+    const rectLoghi = document.getElementById("branding").getBoundingClientRect()
     const rectContatta = document.getElementById("contatta").getBoundingClientRect()
     // const rectContatta = document.getElementById("contatta").getBoundingClientRect()
     let loadingBarFill = document.querySelector(".loadingbar-fill")
@@ -34,7 +34,7 @@ document.addEventListener("scroll", () => {
             loadingBarFill.style.width = "16.67%"
         } if (rectGraficaSocial.top < window.innerHeight) {
             loadingBarFill.style.width = "33.34%"
-        } if (rectImpaginazione.top < window.innerHeight) {
+        } if (rectStampe.top < window.innerHeight) {
             loadingBarFill.style.width = "50%"
         } if (rectLoghi.top < window.innerHeight) {
             loadingBarFill.style.width = "68%"
@@ -49,8 +49,8 @@ document.addEventListener("scroll", () => {
             loadingBarFill.style.width = "15%"
         } if (rectGraficaSocial.top < window.innerHeight) {
             loadingBarFill.style.width = "30%"
-        } if (rectImpaginazione.top < window.innerHeight) {
-            loadingBarFill.style.width = "45%"
+        } if (rectStampe.top < window.innerHeight) {
+            loadingBarFill.style.width = "47%"
         } if (rectLoghi.top < window.innerHeight) {
             loadingBarFill.style.width = "70%"
         } if (rectContatta.top < window.innerHeight) {

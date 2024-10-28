@@ -37,24 +37,24 @@ document.addEventListener("scroll", () => {
         } if (rectStampe.top < window.innerHeight) {
             loadingBarFill.style.width = "50%"
         } if (rectLoghi.top < window.innerHeight) {
-            loadingBarFill.style.width = "68%"
+            loadingBarFill.style.width = "66.7%"
         } if (rectContatta.top < window.innerHeight) {
-            loadingBarFill.style.width = "84%"
+            loadingBarFill.style.width = "83.3%"
         }
     } else {
         // mobile
         if (rectAbout.top < window.innerHeight) {
             loadingBarFill.style.width = "0%"
         } if (rectEventDesign.top < window.innerHeight) {
-            loadingBarFill.style.width = "15%"
+            loadingBarFill.style.width = "16.6%"
         } if (rectGraficaSocial.top < window.innerHeight) {
-            loadingBarFill.style.width = "30%"
+            loadingBarFill.style.width = "33.3%"
         } if (rectStampe.top < window.innerHeight) {
-            loadingBarFill.style.width = "47%"
+            loadingBarFill.style.width = "50%"
         } if (rectLoghi.top < window.innerHeight) {
-            loadingBarFill.style.width = "70%"
+            loadingBarFill.style.width = "66.7%"
         } if (rectContatta.top < window.innerHeight) {
-            loadingBarFill.style.width = "84%"
+            loadingBarFill.style.width = "83.3%"
         }
     }
 })
